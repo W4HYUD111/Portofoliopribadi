@@ -463,6 +463,9 @@ body.dark-mode .hobby-card p {
                 86pVdMWtcN2uwf</span>
                 <i class="fas fa-copy"></i>
             </div>
+            <small class="btc-verify">
+              <a href="https://mempool.space/address/1CU4MBc8aV67Xc4wqfG786pVdMWtcN2uwf" target="_blank">Verifikasi di Mempool.space</a> »»
+            </small>
         </div>
 
         <!-- Ethereum -->
@@ -479,24 +482,32 @@ body.dark-mode .hobby-card p {
                 7d8AdF914eDa77f17B67F8</span>
                 <i class="fas fa-copy"></i>
             </div>
+            <small class="ethereum-verify">
+              <a href="https://etherscan.io/address/0xf72B1355d7C8570Ef67d8AdF914eDa77f17B67F8" target="_blank">
+                Verifikasi di Etherscan
+              </a> »»
+            </small>
         </div>
 
-        <!-- Tether -->
-        <div class="crypto-card">
-            <div class="crypto-header">
-                <i class="fas fa-coins"></i>
-                <h3>Tether (USDT)</h3>
-            </div>
-            <img src="1739074624741.jpg" 
-                 alt="USDT QR Code" 
-                 class="qr-code">
-            <div class="wallet-address" onclick="copyAddress(this)">
-                <span>0xf72B1355d7C8570Ef6
-                7d8AdF914eDa77f17B67F8</span>
-                <i class="fas fa-copy"></i>
-            </div>
-        </div>
+<div class="crypto-card">
+    <div class="crypto-header">
+        <i class="fas fa-coins"></i>
+        <h3>Solana (SOL)</h3>
     </div>
+    <img src="1739458891523.jpg" 
+         alt="SOL QR Code" 
+         class="qr-code">
+    <div class="wallet-address" onclick="copyAddress(this)">
+        <span>8cDs1DHwYs4xzqPJMmAFEL
+        jtedEDszkELMwie9tpeSY7</span>
+        <i class="fas fa-copy"></i>
+    </div>
+    <small class="solana-verify">
+        <a href="https://solscan.io/account/8cDs1DHwYs4xzqPJMmAFELjtedEDszkELMwie9tpeSY7" target="_blank">
+            Verifikasi di Solscan
+        </a> »»
+    </small>
+</div>
 </section>
 
 <div class="dark-mode-toggle"><i class="fas fa-moon"></i></div>
@@ -1053,3 +1064,87 @@ document.querySelectorAll('.hobby-card').forEach((card) => {
     }
 </style>
 
+<style>
+/* Tambahkan CSS khusus Solana */
+.solana-verify {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--secondary);
+}
+
+.solana-verify a {
+    color: #0033a0; /* Warna brand Solana */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.solana-verify a:hover {
+    color: #0033a0; /* Warna sekunder Solana */
+    text-decoration: underline;
+}
+</style>
+
+<script>
+// Update fungsi copy untuk Solana
+function copyAddress(element) {
+    const solanaAddress = element.querySelector('span').textContent;
+    
+    // Fallback untuk browser lama
+    if(!navigator.clipboard) {
+        const textArea = document.createElement('textarea');
+        textArea.value = solanaAddress;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    } else {
+        navigator.clipboard.writeText(solanaAddress);
+    }
+    
+    // Feedback visual
+    const icon = element.querySelector('i');
+    icon.classList.replace('fa-copy', 'fa-check');
+    
+    setTimeout(() => {
+        icon.classList.replace('fa-check', 'fa-copy');
+    }, 2000);
+}
+</script>
+
+<style>
+ethereum-verify {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--secondary);
+}
+
+.ethereum-verify a {
+    color: #0033a0; /* Warna brand Solana */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.ethereum-verify a:hover {
+    color: #0033a0; /* Warna sekunder Solana */
+    text-decoration: underline;
+}
+</style>
+
+<style>
+btc-verify {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--secondary);
+}
+
+.btc-verify a {
+    color: #0033a0; /* Warna brand Solana */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btc-verify a:hover {
+    color: #0033a0; /* Warna sekunder Solana */
+    text-decoration: underline;
+}
+</style>
