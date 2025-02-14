@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0033a0; /* Warna BRI */
-            --secondary: #007bff;
+            --primary: #0095F6; /* Warna BRI */
+            --secondary: #2ECC71;
             --dark: #1a1a1a;
             --light: #ffffff;
         }* {
@@ -182,6 +182,15 @@ body.dark-mode .hobby-card p {
         opacity: 0;
         transform: translateY(20px);
     }
+   
+   .project-card a {
+    color: var(--secondary);
+    font-weight: bold; /* Jika ingin huruf lebih tebal */
+}
+
+.project-card a:hover {
+    color: #9945FF;
+}
 
     .project-card.visible {
         opacity: 1;
@@ -375,6 +384,10 @@ body.dark-mode .hobby-card p {
             <a href="https://ipfs.io/ipfs/bafkreibieobuimymzly2gpbrk6n7fy5ltqf2jkm76754pgenym64dq6f2u"
             target="_blank">lihat proyek</a> >>>
         </div>
+        <div class="project-card">
+            <h3>COMING SOON!</h3>
+            <p></p>
+        </div>
     </div>
 </section>
 
@@ -389,7 +402,7 @@ body.dark-mode .hobby-card p {
         <div class="skill-card">
             <i class="fas fa-file-word"></i>
             <h3>Microsoft Word</h3>
-            <p>Document Formatting, Report Writing, Mail Merge</p>
+            <p>Document Formatting, Report Writing,  Merge</p>
         </div>
     </div>
 </section>
@@ -423,20 +436,20 @@ body.dark-mode .hobby-card p {
         <!-- Informasi Kontak -->
         <div class="contact-info">
             <div class="info-card">
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope email-icon"></i>
                 <h3>Email</h3>
                 <p>meko7615@gmail.com</p>
             </div>
             <div class="info-card">
-                <i class="fas fa-phone"></i>
+                <i class="fas fa-phone whatsapp-icon"></i>
                 <h3>WhatsApp</h3>
                 <p>+62895 2502 7398</p>
                 <a href="https://wa.me/6289525027398"
                  target="_blank"
-                 class="WhatsApp">Chat!</a> »»
+                 class="WhatsApp-link">Chat!</a> »»
             </div>
                 <div class="info-card">
-                <i class="fas fa-file-pdf"></i>
+                <i class="fas fa-file-pdf pdf-icon"></i>
                 <h3>CV</h3>
                 <p>(Curriculum Vitae)</p>
                 <a href="https://ipfs.io/ipfs/bafybeieoa23rcahlwqlwgwdx7sqwj6ddav6jiwu7ykfigy3xmksre6pwsi" 
@@ -464,14 +477,14 @@ body.dark-mode .hobby-card p {
                 <i class="fas fa-copy"></i>
             </div>
             <small class="btc-verify">
-              <a href="https://mempool.space/address/1CU4MBc8aV67Xc4wqfG786pVdMWtcN2uwf" target="_blank">Verifikasi di Mempool.space</a> »»
+              <a href="https://mempool.space/address/1CU4MBc8aV67Xc4wqfG786pVdMWtcN2uwf" target="_blank"> Mempool.space</a> »»
             </small>
         </div>
 
         <!-- Ethereum -->
         <div class="crypto-card">
             <div class="crypto-header">
-                <i class="fab fa-ethereum"></i>
+                <p class="fab fa-ethereum"></p>
                 <h3>Ethereum (ETH)</h3>
             </div>
             <img src="1739074624741.jpg" 
@@ -483,15 +496,14 @@ body.dark-mode .hobby-card p {
                 <i class="fas fa-copy"></i>
             </div>
             <small class="ethereum-verify">
-              <a href="https://etherscan.io/address/0xf72B1355d7C8570Ef67d8AdF914eDa77f17B67F8" target="_blank">
-                Verifikasi di Etherscan
+              <a href="https://etherscan.io/address/0xf72B1355d7C8570Ef67d8AdF914eDa77f17B67F8" target="_blank"> Etherscan
               </a> »»
             </small>
         </div>
 
 <div class="crypto-card">
     <div class="crypto-header">
-        <i class="fas fa-coins"></i>
+       <img src="solana-sol-logo.svg"
         <h3>Solana (SOL)</h3>
     </div>
     <img src="1739458891523.jpg" 
@@ -503,8 +515,7 @@ body.dark-mode .hobby-card p {
         <i class="fas fa-copy"></i>
     </div>
     <small class="solana-verify">
-        <a href="https://solscan.io/account/8cDs1DHwYs4xzqPJMmAFELjtedEDszkELMwie9tpeSY7" target="_blank">
-            Verifikasi di Solscan
+        <a href="https://solscan.io/account/8cDs1DHwYs4xzqPJMmAFELjtedEDszkELMwie9tpeSY7" target="_blank">Solscan
         </a> »»
     </small>
 </div>
@@ -513,32 +524,41 @@ body.dark-mode .hobby-card p {
 <div class="dark-mode-toggle"><i class="fas fa-moon"></i></div>
 
 <script>
-    // Mobile Menu
+    document.addEventListener("DOMContentLoaded", function () {
+    // Toggle menu
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
 
-    // Dark Mode Toggle
+    // Dark mode toggle
     const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    const icon = darkModeToggle.querySelector('i');
+
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        icon.classList.add('fa-sun');
+    } else {
+        icon.classList.add('fa-moon');
+    }
+
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
-        darkModeToggle.querySelector('i').classList.toggle('fa-sun');
-    });
 
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        icon.classList.toggle('fa-moon', !isDarkMode);
+        icon.classList.toggle('fa-sun', isDarkMode);
 
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+});
+</script>
+
+<script>
     // Scroll Animation
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -836,6 +856,30 @@ body.dark-mode .hobby-card p {
         margin: 0;
         font-size: 0.9rem;
     }
+    
+    .email-icon {
+    color: #D44638 !important;
+}
+
+.email-text {
+    color: #D44638 !important;
+}
+    
+.WhatsApp-link {
+    color: var(--secondary); /* Warna biru */
+}
+
+.whatsapp-icon {
+    color: #25D366 !important;
+}
+
+.pdf-icon {
+    color: #FF0000 !important;
+}
+
+.cv-link {
+    color: var(--secondary); /* Warna hijau */
+}
 
     /* Dark Mode */
     body.dark-mode .contact {
@@ -873,7 +917,38 @@ document.getElementById("contactForm").addEventListener("submit", async function
     submitBtn.innerHTML = "Mengirim...";
     submitBtn.disabled = true;
 
-    var formData = new FormData(form);
+    var formData = new FormData(form);document.addEventListener("DOMContentLoaded", function() {
+  // Toggle menu
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  // Dark mode toggle
+  const darkModeToggle = document.querySelector('.dark-mode-toggle');
+  const icon = darkModeToggle.querySelector('i');
+
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    icon.classList.add('fa-sun');
+  } else {
+    icon.classList.add('fa-moon');
+  }
+
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    icon.classList.toggle('fa-moon', !isDarkMode);
+    icon.classList.toggle('fa-sun', isDarkMode);
+
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  });
+});
     var response = await fetch(form.action, {
         method: "POST",
         body: formData,
@@ -950,11 +1025,22 @@ document.getElementById("contactForm").addEventListener("submit", async function
         gap: 1rem;
         margin-bottom: 1rem;
     }
-
-    .crypto-header i {
-        font-size: 2rem;
-        color: var(--primary);
-    }
+    
+   .crypto-header i {
+     font-size: 2rem;
+     color: #F7931A;
+   }
+   
+   .crypto-header p {
+     font-size: 2rem;
+     color: #627EEA;
+   }
+   
+   .crypto-header img {
+     width: 33px;
+     height: auto;
+     vertical-align: middle;
+   }
 
     .qr-code {
         width: 150px;
@@ -973,6 +1059,12 @@ document.getElementById("contactForm").addEventListener("submit", async function
         align-items: center;
         transition: background 0.3s;
     }
+    
+    .wallet-address span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
     .wallet-address:hover {
         background: #e0e0e0;
@@ -1054,7 +1146,7 @@ document.querySelectorAll('.hobby-card').forEach((card) => {
     }
 
     .music-btn {
-        background: #0033a0;
+        background: var(--primary);
         color: white;
         border: none;
         padding: 10px 15px;
@@ -1073,7 +1165,7 @@ document.querySelectorAll('.hobby-card').forEach((card) => {
 }
 
 .solana-verify a {
-    color: #0033a0; /* Warna brand Solana */
+    color: #9945FF; /* Warna brand Solana */
     text-decoration: none;
     font-weight: 500;
 }
@@ -1119,7 +1211,7 @@ ethereum-verify {
 }
 
 .ethereum-verify a {
-    color: #0033a0; /* Warna brand Solana */
+    color: #627EEA; /* Warna brand Solana */
     text-decoration: none;
     font-weight: 500;
 }
@@ -1138,7 +1230,7 @@ btc-verify {
 }
 
 .btc-verify a {
-    color: #0033a0; /* Warna brand Solana */
+    color: #F7931A; /* Warna brand Solana */
     text-decoration: none;
     font-weight: 500;
 }
@@ -1148,3 +1240,4 @@ btc-verify {
     text-decoration: underline;
 }
 </style>
+
