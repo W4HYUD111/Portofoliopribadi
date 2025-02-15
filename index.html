@@ -459,6 +459,21 @@ body.dark-mode .hobby-card p {
     </div>
 </section>
 
+<section id="btc-blocks" class="blocks-section">
+    <div class="btc-header">
+        <i class="fab fa-bitcoin"></i>
+        <h2>Live Bitcoin Blocks</h2>
+    </div>
+
+    <div class="blocks-list">
+        <div class="skeleton-loader"></div> <!-- Loading state -->
+    </div>
+
+    <a id="block-link" href="https://mempool.space/" target="_blank" class="cv-linkk">
+        View on Mempool.space »
+    </a>
+</section>
+
 <section id="donate" class="donations">
     <h2>Donation</h2>
     <div class="crypto-grid">
@@ -869,6 +884,11 @@ body.dark-mode .hobby-card p {
     color: var(--secondary); /* Warna biru */
 }
 
+body.dark-mode .WhatsApp-link {
+    color: #ffcc00; /* Warna kuning agar terlihat jelas */
+}
+
+
 .whatsapp-icon {
     color: #25D366 !important;
 }
@@ -1136,6 +1156,235 @@ document.querySelectorAll('.hobby-card').forEach((card) => {
         }
     });
 </script>
+
+<style>:root {
+    --block-bg-light: #ffffff;
+    --block-bg-dark: #1a1a1a;
+    --block-border-light: #e0e0e0;
+    --block-border-dark: #444;
+    --block-primary: #0033a0;
+    --block-secondary: #007bff;
+    --text-light: #333;
+    --text-dark: #ddd;
+}
+
+.blocks-section {
+    padding: 2rem 5%;
+    background: var(--block-bg-light);
+    color: var(--text-light);
+    transition: background 0.3s, color 0.3s;
+}
+
+.blocks-list {
+    max-height: 600px;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: var(--block-bg-light);
+    transition: background 0.3s;
+}
+
+/* Blok Bitcoin */
+.block-card {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--block-border-light);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeSlideIn 0.5s ease-out forwards;
+}
+
+.block-card:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: translateX(5px);
+}
+
+.btc-header {
+    display: flex;
+    align-items: center; /* Menyelaraskan ikon dan teks secara vertikal */
+    gap: 8px; /* Jarak antara ikon dan teks */
+}
+
+.btc-header i {
+    font-size: 50px; /* Sesuaikan ukuran ikon */
+    color: #F7931A; /* Warna ikon Bitcoin */
+}
+.btc-header i {
+    position: relative;
+    top: -5px; /* Sesuaikan angka ini untuk menaikkan lebih banyak atau sedikit */
+    margin-right: 5px; /* Memberi jarak antara ikon dan teks */
+}
+
+.cv-linkk {
+    padding-top: 8px;
+    display: block;
+}
+
+  .cv-linkk {
+    color: var(--secondary); /* Warna utama */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+body.dark-mode .cv-linkk {
+    color: #ffcc00; /* Warna untuk dark mode */
+}
+
+body.dark-mode .cv-linkk:hover {
+    color: #ffcc00;
+}
+
+.block-hash {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    word-break: break-all;
+    color: #FF5733; /* Warna merah untuk mode terang */
+}
+
+.block-link {
+    color: var(--block-primary); /* Warna utama */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.block-link:hover {
+    color: var(--block-secondary); /* Warna saat hover */
+}
+
+/* Dark Mode */
+body.dark-mode .cv-link {
+    color: #ffcc00; /* Warna kuning agar terlihat jelas */
+}
+
+body.dark-mode .cv-link:hover {
+    color: #ff9900; /* Warna lebih gelap saat hover */
+}
+
+body.dark-mode .block-hash {
+    color: #33FF57; /* Warna hijau untuk mode gelap */
+}
+
+.block-height {
+    font-weight: bold;
+    color: var(--block-secondary);
+}
+
+.block-details {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Dark Mode */
+body.dark-mode .blocks-section {
+    background: var(--block-bg-dark);
+    color: var(--text-dark);
+}
+
+body.dark-mode .blocks-list {
+    background: var(--block-bg-dark);
+}
+
+body.dark-mode .block-card {
+    background: #2d2d2d;
+    border-color: var(--block-border-dark);
+}
+
+body.dark-mode .block-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .block-details {
+    color: #bbb;
+}
+
+/* Skeleton Loader */
+.skeleton-loader {
+    animation: pulse 1.5s infinite;
+    height: 60px;
+    background: #ddd;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+}
+
+body.dark-mode .skeleton-loader {
+    background: #444;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Animasi Masuk */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}</style>
+
+<script>const API_URL = "https://mempool.space/api/blocks";
+const blocksList = document.querySelector(".blocks-list");
+
+async function fetchBitcoinBlocks() {
+    try {
+        const response = await fetch(API_URL);
+        const blocks = await response.json();
+
+        // Hapus daftar sebelumnya
+        blocksList.innerHTML = "";
+
+        // Loop untuk menampilkan 10 blok terbaru
+        blocks.slice(0, 10).forEach((block, index) => {
+            const blockElement = document.createElement("div");
+            blockElement.className = "block-card new-block"; // Tambah animasi masuk
+
+            // Konversi timestamp ke waktu yang bisa dibaca
+            const blockTime = new Date(block.timestamp * 1000);
+            const formattedTime = blockTime.toLocaleTimeString("en-GB");
+
+            blockElement.innerHTML = `
+                <div>
+                    <div class="block-hash">${block.id}</div>
+                    <div class="block-details">
+                        <span>Height: ${block.height}</span>
+                        <span>Transactions: ${block.tx_count}</span>
+                        <span>Size: ${(block.size / 1024).toFixed(2)} KB</span>
+                        <span>Time: ${formattedTime}</span>
+                    </div>
+                </div>
+                <div class="block-height">Block #${block.height}</div>
+            `;
+
+            // Tambahkan blok ke daftar dengan animasi delay
+            setTimeout(() => {
+                blockElement.classList.add("fade-in");
+            }, index * 200); // Tambahkan delay animasi tiap blok
+
+            blocksList.appendChild(blockElement);
+        });
+    } catch (error) {
+        console.error("Error fetching blocks:", error);
+    }
+}
+
+// Ambil blok terbaru setiap 10 detik
+setInterval(fetchBitcoinBlocks, 10000);
+
+// Init saat halaman dimuat
+document.addEventListener("DOMContentLoaded", fetchBitcoinBlocks);</script>
 
 <style>
     .music-player {
