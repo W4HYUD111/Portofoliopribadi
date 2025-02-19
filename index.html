@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0095F6; /* Warna BRI */
+            --primary: #0095F6;
             --secondary: #2ECC71;
             --dark: #1a1a1a;
             --light: #ffffff;
@@ -21,17 +21,45 @@
         scroll-behavior: smooth;
     }
 
-    body {
-        background-color: #f8f9fa;
-        transition: background 0.3s ease;
+  body {
+      background-color: #050a0e;
+      color: #0ff;
+      position: relative;
+      overflow-x: hidden
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      overflow-x: hidden;
     }
+
+    /* Background Grid */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(0deg, rgba(0,255,255,0.3) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0,255,255,0.3) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: gridMove 4s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes gridMove {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 50px 50px, 50px 50px; }
+    }
+        
+        
+        
 
     /* Navigation */
     nav {
         position: fixed;
         top: 0;
         width: 100%;
-        background: var(--light);
+        background: #1a1a1a;
         padding: 1rem 5%;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         z-index: 1000;
@@ -40,12 +68,23 @@
         align-items: center;
     }
 
-    .logo {
-        color: var(--primary);
-        font-size: 1.5rem;
-        font-weight: bold;
-        text-decoration: none;
-    }
+    
+
+.logo {
+    font-size: 24px;
+    font-weight:bolde;
+    color: #00ffff; /* Neon cyan */
+    text-shadow: 2px 2px 5px magenta, -2px -2px 5px cyan;
+    animation: glitchText 1.5s infinite alternate;
+}
+
+}
+
+@keyframes glitchText {
+    0% { text-shadow: 2px 2px 5px magenta, -2px -2px 5px cyan; }
+    50% { text-shadow: -2px -2px 5px magenta, 2px 2px 5px cyan; }
+    100% { text-shadow: 2px -2px 5px magenta, -2px 2px 5px cyan; }
+}
 
     .nav-links {
         display: flex;
@@ -81,35 +120,69 @@
     }
 
     .profile-img {
-        flex: 1 1 350px;
-        max-width: 350px;
-        border-radius: 80%;
-        border: 5px solid var(--primary);
-        overflow: hidden;
-        animation: float 2s ease-in-out infinite;
-    }
+    flex: 1 1 250px;
+    max-width: 250px;
+    border-radius: 15px; /* Sudut kotak tapi melengkung */
+    border: 5px solid var(--primary);
+    overflow: hidden;
+    animation: float 2s ease-in-out infinite, glowAnimation 2s infinite alternate;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.9), 0 0 30px rgba(0, 255, 255, 0.7);
+    transition: box-shadow 0.3s ease-in-out;
+}
 
-    .profile-img img {
-        width: 100%;
-        height: auto;
+.profile-img:hover {
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    border-color: #ff00ff;
+}
+
+@keyframes glowAnimation {
+    0% {
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
     }
+    100% {
+        box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    }
+}
+
+.profile-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* Sesuaikan dengan container */
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-img:hover img {
+    transform: scale(1.05);
+}
 
     .hero-content {
         flex: 1 1 400px;
     }
+    
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.8);
+}
 
-    .hero-content h1 {
-        font-size: 2.5rem;
-        color: var(--primary);
-        margin-bottom: 1rem;
-    }
+
+.hero-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 4px rgba(0, 255, 255, 0.6);
+    line-height: 1.6;
+}
     
     /* Styling untuk section Hobi */
 .hobbies {
     padding: 4rem 5%;
-    background: var(--light);
-    color: var(--dark);
+    background-color: transparent;
+    color: #0ff;
 }
+   
 
 .hobbies-grid {
     display: grid;
@@ -119,16 +192,67 @@
 }
 
 .hobby-card {
-    background: var(--light);
+    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid rgba(0, 255, 255, 0.8);
+    position: relative;
 }
 
 .hobby-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
+    border-color: rgba(255, 0, 255, 0.9);
+}
+
+.hobby-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.7;
+    border-radius: 14px;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
+    25% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-2px); }
+    50% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(2px); }
+    75% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-1px); }
+    100% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
+}
+
+ @keyframes glitch {
+    0% { text-shadow: 3px 0 cyan, -3px 0 magenta, 0 3px lime; transform: translateX(0); }
+    20% { text-shadow: -3px 0 cyan, 3px 0 magenta, 0 -3px lime; transform: translateX(-0.8px); }
+    40% { text-shadow: 3px 3px cyan, -3px -3px magenta, -3px 3px lime; transform: translateX(0.8px); }
+    60% { text-shadow: -3px -3px cyan, 3px 3px magenta, 3px -3px lime; transform: translateX(-0.5px); }
+    80% { text-shadow: 3px -3px cyan, -3px 3px magenta, -3px -3px lime; transform: translateX(0.5px); }
+    100% { text-shadow: -3px 3px cyan, 3px -3px magenta, 3px 3px lime; transform: translateX(0); }
+}
+
+@keyframes color-random {
+    0% { color: cyan; }
+    50% { color: magenta; }
+    100% { color: lime; }
+}
+
+.glitch {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    text-transform: uppercase;
+    color: cyan;
+    animation: glitch 4s infinite alternate ease-in-out, color-random 4s infinite;
 }
 
 .hobby-card i {
@@ -144,22 +268,10 @@
 
 .hobby-card p {
     font-size: 0.9rem;
-    color: #666;
+    color: #cccccc;
 }
 
-/* Dark Mode */
-body.dark-mode .hobbies {
-    background: var(--dark);
-    color: var(--light);
-}
 
-body.dark-mode .hobby-card {
-    background: #333;
-}
-
-body.dark-mode .hobby-card p {
-    color: #ccc;
-}
 
     /* Projects Section */
     .projects {
@@ -172,48 +284,108 @@ body.dark-mode .hobby-card p {
         gap: 2rem;
         margin-top: 2rem;
     }
+    
+.project-card {
+    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid rgba(0, 255, 255, 0.8);
+    position: relative;
+}
 
-    .project-card {
-        background: var(--light);
-        padding: 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.3s;
-        opacity: 0;
-        transform: translateY(20px);
-    }
-   
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
+    border-color: rgba(255, 0, 255, 0.9);
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.7;
+    border-radius: 14px;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
+    25% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-2px); }
+    50% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(2px); }
+    75% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-1px); }
+    100% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
+}
+
+ @keyframes glitch {
+    0% { text-shadow: 3px 0 cyan, -3px 0 magenta, 0 3px lime; transform: translateX(0); }
+    20% { text-shadow: -3px 0 cyan, 3px 0 magenta, 0 -3px lime; transform: translateX(-0.8px); }
+    40% { text-shadow: 3px 3px cyan, -3px -3px magenta, -3px 3px lime; transform: translateX(0.8px); }
+    60% { text-shadow: -3px -3px cyan, 3px 3px magenta, 3px -3px lime; transform: translateX(-0.5px); }
+    80% { text-shadow: 3px -3px cyan, -3px 3px magenta, -3px -3px lime; transform: translateX(0.5px); }
+    100% { text-shadow: -3px 3px cyan, 3px -3px magenta, 3px 3px lime; transform: translateX(0); }
+}
+
+@keyframes color-random {
+    0% { color: cyan; }
+    50% { color: magenta; }
+    100% { color: lime; }
+}
+
+  
    .project-card a {
     color: var(--secondary);
     font-weight: bold; /* Jika ingin huruf lebih tebal */
 }
 
-.project-card a:hover {
-    color: #9945FF;
+.project-card p {
+  color: #cccccc;
 }
 
-    .project-card.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.project-card {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: #00aaff; /* Sesuaikan warna teks */
+}
 
-    /* Social Media */
-    .social-media {
-        margin: 2rem 0;
-        display: flex;
-        gap: 1.5rem;
-    }
+.project-card h3{
+  color: var(--primary);
+}
+    
+.social-media {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
 
-    .social-media a {
-        font-size: 1.5rem;
-        color: var(--primary);
-        transition: 0.3s;
-        text-decoration: none;
-    }
+.social-media a {
+    display: inline-block;
+    font-size: 24px;
+    color: #00bcd4; /* Warna neon cyan */
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+}
 
-    .social-media a:hover {
-        color: var(--secondary);
-    }
+@keyframes glitch {
+    0% { transform: translateX(0); text-shadow: -2px 0 cyan, 2px 0 magenta; }
+    20% { transform: translateX(-2px); text-shadow: -3px 0 cyan, 3px 0 magenta; }
+    40% { transform: translateX(2px); text-shadow: -2px 0 magenta, 2px 0 cyan; }
+    60% { transform: translateX(-1px); text-shadow: -4px 0 cyan, 4px 0 magenta; }
+    80% { transform: translateX(1px); text-shadow: -2px 0 magenta, 2px 0 cyan; }
+    100% { transform: translateX(0); text-shadow: -2px 0 cyan, 2px 0 magenta; }
+}
+
+.social-media a:hover {
+    animation: glitch 0.3s infinite alternate;
+}
 
     /* Animations */
     @keyframes float {
@@ -239,8 +411,22 @@ body.dark-mode .hobby-card p {
         }
 
         .menu-toggle {
-            display: block;
-        }
+    display: block; /* Tampilkan tombol di mode mobile */
+    cursor: pointer;
+    font-size: 2rem;
+    color: #00ffff;
+    transition: transform 0.3s ease;
+    animation: glitchText 1.5s infinite alternate;
+}
+
+
+
+
+
+
+.menu-toggle.active {
+    transform: rotate(90deg);
+}
 
         .hero {
             text-align: center;
@@ -248,50 +434,19 @@ body.dark-mode .hobby-card p {
         }
     }
 
-    /* Dark Mode */
-    body.dark-mode {
-        background-color: var(--dark);
-        color: var(--light);
-    }
-
-    body.dark-mode nav {
-        background-color: #2d2d2d;
-    }
-
-    body.dark-mode .project-card {
-        background-color: #333;
-    }
-
-    .dark-mode-toggle {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: var(--primary);
-        color: white;
-        padding: 10px;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 1000;
-    }
 </style>
 
 </head>
 
-!-- Music Player -->
-<div class="music-player">
-    <audio id="bg-music" loop>
-        <source src="Chill.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung audio element.
-    </audio>
-    <button id="music-toggle" class="music-btn">
-        <i class="fas fa-play"></i>
-    </button>
-</div>
-
 <body>
     <nav>
     <div class="logo-container">
-        <a href="#" class="logo">Portofolio</a>
+        <a class="logo">Portofolio</a>
+
+<audio id="bg-music" autoplay loop>
+    <source src="Perturbator - Future Club (Cyberpunk 2077).mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
 
     </div>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
@@ -307,10 +462,10 @@ body.dark-mode .hobby-card p {
     
     <section id="home" class="hero">
     <div class="profile-img">
-        <img src="Picsart_25-02-10_16-46-43-189.jpg" alt="Foto Profil">
+        <img src="Picsart_25-02-08_13-10-07-459.jpg" alt="Foto Profil">
     </div>
     <div class="hero-content">
-        <h1>Hey, I'm MUHAMMAD EKO WAHYUDI</h1>
+        <h1>Hey, I'm MUHAMMAD EKO </h1>
         <h2>I'm a INVESTOR & SMART CONTRACT DEVELOPER</h2>
         <p>Building secure and scalable smart contracts while strategically investing in blockchain innovations. With a deep understanding of DeFi, NFTs, and decentralized applications, I strive to contribute to the growth of the Web3 ecosystem.</p>
         <div class="social-media">
@@ -324,7 +479,7 @@ body.dark-mode .hobby-card p {
 
 <!-- Tambahkan setelah section Skills -->
 <section id="hobbies" class="hobbies">
-    <h2>Hobbies</h2>
+   <h2 class="glitch">Hobbies</h2>
     <div class="hobbies-grid">
         <!-- Membaca -->
         <div class="hobby-card">
@@ -350,7 +505,7 @@ body.dark-mode .hobby-card p {
 </section>
 
 <section id="education" class="education">
-        <h2>Education</h2>
+<h2 class="glitch">Education</h2>
         <div class="education-grid">
             <a href="https://maps.app.goo.gl/YR3Gxxvc7t3Gefu57?g_st=ac" target="_blank" class="education-card">
                 <h3>MI NU AL-FAQIH</h3>
@@ -376,7 +531,7 @@ body.dark-mode .hobby-card p {
     </section>
 
 <section id="projects" class="projects">
-    <h2>Project</h2>
+   <h2 class="glitch">Project</h2>
     <div class="project-grid">
         <div class="project-card">
             <h3>Smart Contract CID</h3>
@@ -392,7 +547,7 @@ body.dark-mode .hobby-card p {
 </section>
 
 <section id="skills" class="skills">
-    <h2>Skills</h2>
+   <h2 class="glitch">Skills</h2>
     <div class="skills-grid">
         <div class="skill-card">
             <i class="fas fa-file-excel"></i>
@@ -411,7 +566,7 @@ body.dark-mode .hobby-card p {
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <section id="contact" class="contact">
-    <h2>Contact Me</h2>
+    <h2 class="glitch">Contact</h2>
     <div class="contact-container">
         <div class="contact-form">
             <form id="contactForm" action="https://formspree.io/f/mdkallnj" method="POST">
@@ -446,7 +601,7 @@ body.dark-mode .hobby-card p {
                 <p>+62895 2502 7398</p>
                 <a href="https://wa.me/6289525027398"
                  target="_blank"
-                 class="WhatsApp-link">Chat!</a> »»
+                 class="WhatsApp-link">Chat! »»</a>
             </div>
                 <div class="info-card">
                 <i class="fas fa-file-pdf pdf-icon"></i>
@@ -454,28 +609,14 @@ body.dark-mode .hobby-card p {
                 <p>(Curriculum Vitae)</p>
                 <a href="https://drive.google.com/file/d/1WFKmI6YA0_Vc3vrM35vioL7fHThHeSsF/view?usp=drivesdk" 
                    target="_blank" 
-                   class="cv-link">Lihat</a> »»
+                   class="cv-link">Lihat »»</a>
         </div>
     </div>
 </section>
 
-<section id="btc-blocks" class="blocks-section">
-    <div class="btc-header">
-        <i class="fab fa-bitcoin"></i>
-        <h2>Live Bitcoin Blocks</h2>
-    </div>
-
-    <div class="blocks-list">
-        <div class="skeleton-loader"></div> <!-- Loading state -->
-    </div>
-
-    <a id="block-link" href="https://mempool.space/" target="_blank" class="cv-linkk">
-        View on Mempool.space »
-    </a>
-</section>
 
 <section id="donate" class="donations">
-    <h2>Donation</h2>
+   <h2 class="glitch">Donation</h2>
     <div class="crypto-grid">
         <!-- Bitcoin -->
         <div class="crypto-card">
@@ -518,8 +659,8 @@ body.dark-mode .hobby-card p {
 
 <div class="crypto-card">
     <div class="crypto-header">
-       <img src="solana-sol-logo.svg"
-        <h3>Solana (SOL)</h3>
+       <img src="solana-sol-logo.svg"</span>
+       <h3>Solana (SOL)</h3>
     </div>
     <img src="1739458891523.jpg" 
          alt="SOL QR Code" 
@@ -536,15 +677,17 @@ body.dark-mode .hobby-card p {
 </div>
 </section>
 
-<div class="dark-mode-toggle"><i class="fas fa-moon"></i></div>
+
 
 <script>
+
+
     document.addEventListener("DOMContentLoaded", function () {
     // Toggle menu
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    if (menuToggle && navLinks) {
+    if (navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
@@ -597,6 +740,42 @@ body.dark-mode .hobby-card p {
     });
 </script>
 
+<script>window.addEventListener("load", () => {
+    const audio = document.getElementById("bg-music");
+
+    // Coba play otomatis
+    const playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                // Jika autoplay berhasil, hapus mute
+                audio.muted = false;
+            })
+            .catch(() => {
+                // Jika autoplay gagal, tampilkan tombol play manual
+                const playButton = document.createElement("button");
+                playButton.innerText = "Play Music";
+                playButton.style.position = "fixed";
+                playButton.style.bottom = "20px";
+                playButton.style.right = "20px";
+                playButton.style.padding = "10px 20px";
+                playButton.style.backgroundColor = "#00ffcc";
+                playButton.style.color = "#000";
+                playButton.style.border = "none";
+                playButton.style.cursor = "pointer";
+                playButton.style.zIndex = "1000";
+
+                document.body.appendChild(playButton);
+
+                playButton.addEventListener("click", () => {
+                    audio.play();
+                    playButton.remove(); // Hapus tombol setelah diklik
+                });
+            });
+    }
+});</script>
+
 </body>
 </html>
 <footer>
@@ -612,7 +791,7 @@ body.dark-mode .hobby-card p {
     footer {
         text-align: center;
         padding: 2rem 5%;
-        background: var(--dark);
+        background: rgba(255, 255, 255, 0.1);
         color: var(--light);
         position: relative;
     }
@@ -638,10 +817,6 @@ body.dark-mode .hobby-card p {
         animation: float 3s ease-in-out infinite; /* Terapkan animasi */
     }
 
-    /* Dark Mode */
-    body.dark-mode footer {
-        background: #1a1a1a;
-    }
 </style>
 </footer>
 <style>
@@ -650,41 +825,78 @@ body.dark-mode .hobby-card p {
         }
 
         .education-grid {
+          background: transparent;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .education-card {
-            background: var(--light);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-            color: var(--dark);
-            opacity: 0;
-            transform: translateY(20px);
-        }
+   .education-card {
+    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid rgba(0, 255, 255, 0.8);
+    position: relative;
+}
 
-        .education-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.education-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
+    border-color: rgba(255, 0, 255, 0.9);
+}
 
-        .education-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
+.education-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.7;
+    border-radius: 14px;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
+    25% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-2px); }
+    50% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(2px); }
+    75% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-1px); }
+    100% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
+}
+
+ @keyframes glitch {
+    0% { text-shadow: 3px 0 cyan, -3px 0 magenta, 0 3px lime; transform: translateX(0); }
+    20% { text-shadow: -3px 0 cyan, 3px 0 magenta, 0 -3px lime; transform: translateX(-0.8px); }
+    40% { text-shadow: 3px 3px cyan, -3px -3px magenta, -3px 3px lime; transform: translateX(0.8px); }
+    60% { text-shadow: -3px -3px cyan, 3px 3px magenta, 3px -3px lime; transform: translateX(-0.5px); }
+    80% { text-shadow: 3px -3px cyan, -3px 3px magenta, -3px -3px lime; transform: translateX(0.5px); }
+    100% { text-shadow: -3px 3px cyan, 3px -3px magenta, 3px 3px lime; transform: translateX(0); }
+}
+
+@keyframes color-random {
+    0% { color: cyan; }
+    50% { color: magenta; }
+    100% { color: lime; }
+}
 
         .education-card h3 {
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
-
+.education-card {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: #00aaff; /* Sesuaikan warna teks */
+}
         .education-card p {
             margin: 0.3rem 0;
+            color: #cccccc;
             font-size: 0.9rem;
         }
 
@@ -693,12 +905,7 @@ body.dark-mode .hobby-card p {
             margin-left: 5px;
             color: var(--secondary);
         }
-
-        /* Dark mode styles */
-        body.dark-mode .education-card {
-            background-color: #333;
-            color: var(--light);
-        }
+        
     </style>
 
     <!-- Update script untuk animasi -->
@@ -714,8 +921,8 @@ body.dark-mode .hobby-card p {
 <style>
     .skills {
         padding: 4rem 5%;
-        background: var(--light);
-        color: var(--dark);
+        background: transparent;
+        color: #0ff;
     }
 
     .skills-grid {
@@ -725,18 +932,37 @@ body.dark-mode .hobby-card p {
         margin-top: 2rem;
     }
 
-    .skill-card {
-        background: var(--light);
-        padding: 2rem;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.3s;
-    }
+    
+.skill-card {
+    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid rgba(0, 255, 255, 0.8);
+    position: relative;
+}
 
-    .skill-card:hover {
-        transform: translateY(-5px);
-    }
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
+    border-color: rgba(255, 0, 255, 0.9);
+}
+
+.skill-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.7;
+    border-radius: 14px;
+}
 
     .skill-card i {
         font-size: 3rem;
@@ -751,22 +977,9 @@ body.dark-mode .hobby-card p {
 
     .skill-card p {
         font-size: 0.9rem;
-        color: #666;
+        color: #cccccc;
     }
 
-    /* Dark Mode */
-    body.dark-mode .skills {
-        background: var(--dark);
-        color: var(--light);
-    }
-
-    body.dark-mode .skill-card {
-        background: #333;
-    }
-
-    body.dark-mode .skill-card p {
-        color: #ccc;
-    }
 </style>
 <script>
     // Animasi untuk skill cards
@@ -778,7 +991,7 @@ body.dark-mode .hobby-card p {
  <style>
     .contact {
         padding: 4rem 5%;
-        background: var(--light);
+        background: transparent;
         color: var(--dark);
     }
 
@@ -789,12 +1002,59 @@ body.dark-mode .hobby-card p {
         margin-top: 2rem;
     }
 
-    .contact-form {
-        background: var(--light);
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+   .contact-form {
+    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid rgba(0, 255, 255, 0.8);
+    position: relative;
+}
+
+.contact-form:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
+    border-color: rgba(255, 0, 255, 0.9);
+}
+
+.contact-form::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.7;
+    border-radius: 14px;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
+    25% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-2px); }
+    50% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(2px); }
+    75% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-1px); }
+    100% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
+}
+
+ @keyframes glitch {
+    0% { text-shadow: 3px 0 cyan, -3px 0 magenta, 0 3px lime; transform: translateX(0); }
+    20% { text-shadow: -3px 0 cyan, 3px 0 magenta, 0 -3px lime; transform: translateX(-0.8px); }
+    40% { text-shadow: 3px 3px cyan, -3px -3px magenta, -3px 3px lime; transform: translateX(0.8px); }
+    60% { text-shadow: -3px -3px cyan, 3px 3px magenta, 3px -3px lime; transform: translateX(-0.5px); }
+    80% { text-shadow: 3px -3px cyan, -3px 3px magenta, -3px -3px lime; transform: translateX(0.5px); }
+    100% { text-shadow: -3px 3px cyan, 3px -3px magenta, 3px 3px lime; transform: translateX(0); }
+}
+
+@keyframes color-random {
+    0% { color: cyan; }
+    50% { color: magenta; }
+    100% { color: lime; }
+}
 
     .form-group {
         margin-bottom: 1.5rem;
@@ -844,18 +1104,58 @@ body.dark-mode .hobby-card p {
     }
 
     .info-card {
-        background: var(--light);
-        padding: 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        text-align: center;
-        transition: transform 0.3s;
-    }
+    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid rgba(0, 255, 255, 0.8);
+    position: relative;
+}
 
-    .info-card:hover {
-        transform: translateY(-5px);
-    }
+.info-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
+    border-color: rgba(255, 0, 255, 0.9);
+}
 
+.info-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.7;
+    border-radius: 14px;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
+    25% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-2px); }
+    50% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(2px); }
+    75% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-1px); }
+    100% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
+}
+
+ @keyframes glitch {
+    0% { text-shadow: 3px 0 cyan, -3px 0 magenta, 0 3px lime; transform: translateX(0); }
+    20% { text-shadow: -3px 0 cyan, 3px 0 magenta, 0 -3px lime; transform: translateX(-0.8px); }
+    40% { text-shadow: 3px 3px cyan, -3px -3px magenta, -3px 3px lime; transform: translateX(0.8px); }
+    60% { text-shadow: -3px -3px cyan, 3px 3px magenta, 3px -3px lime; transform: translateX(-0.5px); }
+    80% { text-shadow: 3px -3px cyan, -3px 3px magenta, -3px -3px lime; transform: translateX(0.5px); }
+    100% { text-shadow: -3px 3px cyan, 3px -3px magenta, 3px 3px lime; transform: translateX(0); }
+}
+
+@keyframes color-random {
+    0% { color: cyan; }
+    50% { color: magenta; }
+    100% { color: lime; }
+}
     .info-card i {
         font-size: 2rem;
         color: var(--primary);
@@ -868,6 +1168,7 @@ body.dark-mode .hobby-card p {
     }
 
     .info-card p {
+      color: #cccccc;
         margin: 0;
         font-size: 0.9rem;
     }
@@ -884,9 +1185,6 @@ body.dark-mode .hobby-card p {
     color: var(--secondary); /* Warna biru */
 }
 
-body.dark-mode .WhatsApp-link {
-    color: #ffcc00; /* Warna kuning agar terlihat jelas */
-}
 
 
 .whatsapp-icon {
@@ -901,27 +1199,6 @@ body.dark-mode .WhatsApp-link {
     color: var(--secondary); /* Warna hijau */
 }
 
-    /* Dark Mode */
-    body.dark-mode .contact {
-        background: var(--dark);
-        color: var(--light);
-    }
-
-    body.dark-mode .contact-form,
-    body.dark-mode .info-card {
-        background: #333;
-    }
-
-    body.dark-mode .form-group input,
-    body.dark-mode .form-group textarea {
-        background: #444;
-        border-color: #555;
-        color: var(--light);
-    }
-
-    body.dark-mode .form-group input:focus,
-    body.dark-mode .form-group textarea:focus {
-        border-color: var(--primary);
     }
 </style>
 
@@ -948,26 +1225,6 @@ document.getElementById("contactForm").addEventListener("submit", async function
     });
   }
 
-  // Dark mode toggle
-  const darkModeToggle = document.querySelector('.dark-mode-toggle');
-  const icon = darkModeToggle.querySelector('i');
-
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    icon.classList.add('fa-sun');
-  } else {
-    icon.classList.add('fa-moon');
-  }
-
-  darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    icon.classList.toggle('fa-moon', !isDarkMode);
-    icon.classList.toggle('fa-sun', isDarkMode);
-
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  });
 });
     var response = await fetch(form.action, {
         method: "POST",
@@ -996,14 +1253,6 @@ document.getElementById("contactForm").addEventListener("submit", async function
     submitBtn.disabled = false;
 });
 
-    // Animasi untuk info cards
-    const infoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.info-card').forEach(card => {
@@ -1028,16 +1277,58 @@ document.getElementById("contactForm").addEventListener("submit", async function
     }
 
     .crypto-card {
-        background: var(--light);
-        padding: 1.5rem;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.3s;
-    }
+    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid rgba(0, 255, 255, 0.8);
+    position: relative;
+}
 
-    .crypto-card:hover {
-        transform: translateY(-5px);
-    }
+.crypto-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
+    border-color: rgba(255, 0, 255, 0.9);
+}
+
+.crypto-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.7;
+    border-radius: 14px;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
+    25% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-2px); }
+    50% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(2px); }
+    75% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-1px); }
+    100% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
+}
+
+ @keyframes glitch {
+    0% { text-shadow: 3px 0 cyan, -3px 0 magenta, 0 3px lime; transform: translateX(0); }
+    20% { text-shadow: -3px 0 cyan, 3px 0 magenta, 0 -3px lime; transform: translateX(-0.8px); }
+    40% { text-shadow: 3px 3px cyan, -3px -3px magenta, -3px 3px lime; transform: translateX(0.8px); }
+    60% { text-shadow: -3px -3px cyan, 3px 3px magenta, 3px -3px lime; transform: translateX(-0.5px); }
+    80% { text-shadow: 3px -3px cyan, -3px 3px magenta, -3px -3px lime; transform: translateX(0.5px); }
+    100% { text-shadow: -3px 3px cyan, 3px -3px magenta, 3px 3px lime; transform: translateX(0); }
+}
+
+@keyframes color-random {
+    0% { color: cyan; }
+    50% { color: magenta; }
+    100% { color: lime; }
+}
 
     .crypto-header {
         display: flex;
@@ -1045,6 +1336,8 @@ document.getElementById("contactForm").addEventListener("submit", async function
         gap: 1rem;
         margin-bottom: 1rem;
     }
+   
+   
     
    .crypto-header i {
      font-size: 2rem;
@@ -1081,6 +1374,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     }
     
     .wallet-address span {
+      color: #000;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1094,14 +1388,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
         color: var(--secondary);
     }
 
-    /* Dark Mode */
-    body.dark-mode .crypto-card {
-        background: #333;
-    }
-
-    body.dark-mode .wallet-address {
-        background: #444;
-    }
+    
 </style>
 
 <!-- Tambahkan JavaScript -->
@@ -1157,67 +1444,7 @@ document.querySelectorAll('.hobby-card').forEach((card) => {
     });
 </script>
 
-<style>:root {
-    --block-bg-light: #ffffff;
-    --block-bg-dark: #1a1a1a;
-    --block-border-light: #e0e0e0;
-    --block-border-dark: #444;
-    --block-primary: #0033a0;
-    --block-secondary: #007bff;
-    --text-light: #333;
-    --text-dark: #ddd;
-}
-
-.blocks-section {
-    padding: 2rem 5%;
-    background: var(--block-bg-light);
-    color: var(--text-light);
-    transition: background 0.3s, color 0.3s;
-}
-
-.blocks-list {
-    max-height: 600px;
-    overflow-y: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background: var(--block-bg-light);
-    transition: background 0.3s;
-}
-
-/* Blok Bitcoin */
-.block-card {
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--block-border-light);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-    transition: transform 0.3s ease-in-out, background 0.3s;
-    opacity: 0;
-    transform: translateY(15px);
-    animation: fadeSlideIn 0.5s ease-out forwards;
-}
-
-.block-card:hover {
-    background: rgba(0, 0, 0, 0.05);
-    transform: translateX(5px);
-}
-
-.btc-header {
-    display: flex;
-    align-items: center; /* Menyelaraskan ikon dan teks secara vertikal */
-    gap: 8px; /* Jarak antara ikon dan teks */
-}
-
-.btc-header i {
-    font-size: 50px; /* Sesuaikan ukuran ikon */
-    color: #F7931A; /* Warna ikon Bitcoin */
-}
-.btc-header i {
-    position: relative;
-    top: -5px; /* Sesuaikan angka ini untuk menaikkan lebih banyak atau sedikit */
-    margin-right: 5px; /* Memberi jarak antara ikon dan teks */
-}
-
+<style>
 .cv-linkk {
     padding-top: 8px;
     display: block;
@@ -1228,182 +1455,9 @@ document.querySelectorAll('.hobby-card').forEach((card) => {
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s;
-}
 
-body.dark-mode .cv-linkk {
-    color: #ffcc00; /* Warna untuk dark mode */
-}
-
-body.dark-mode .cv-linkk:hover {
-    color: #ffcc00;
-}
-
-.block-hash {
-    font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
-    word-break: break-all;
-    color: #FF5733; /* Warna merah untuk mode terang */
-}
-
-.block-link {
-    color: var(--block-primary); /* Warna utama */
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.block-link:hover {
-    color: var(--block-secondary); /* Warna saat hover */
-}
-
-/* Dark Mode */
-body.dark-mode .cv-link {
-    color: #ffcc00; /* Warna kuning agar terlihat jelas */
-}
-
-body.dark-mode .cv-link:hover {
-    color: #ff9900; /* Warna lebih gelap saat hover */
-}
-
-body.dark-mode .block-hash {
-    color: #33FF57; /* Warna hijau untuk mode gelap */
-}
-
-.block-height {
-    font-weight: bold;
-    color: var(--block-secondary);
-}
-
-.block-details {
-    grid-column: span 2;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    color: #666;
-}
-
-/* Dark Mode */
-body.dark-mode .blocks-section {
-    background: var(--block-bg-dark);
-    color: var(--text-dark);
-}
-
-body.dark-mode .blocks-list {
-    background: var(--block-bg-dark);
-}
-
-body.dark-mode .block-card {
-    background: #2d2d2d;
-    border-color: var(--block-border-dark);
-}
-
-body.dark-mode .block-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-body.dark-mode .block-details {
-    color: #bbb;
-}
-
-/* Skeleton Loader */
-.skeleton-loader {
-    animation: pulse 1.5s infinite;
-    height: 60px;
-    background: #ddd;
-    border-radius: 8px;
-    margin: 0.5rem 0;
-}
-
-body.dark-mode .skeleton-loader {
-    background: #444;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-}
-
-/* Animasi Masuk */
-@keyframes fadeSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }</style>
 
-<script>const API_URL = "https://mempool.space/api/blocks";
-const blocksList = document.querySelector(".blocks-list");
-
-async function fetchBitcoinBlocks() {
-    try {
-        const response = await fetch(API_URL);
-        const blocks = await response.json();
-
-        // Hapus daftar sebelumnya
-        blocksList.innerHTML = "";
-
-        // Loop untuk menampilkan 10 blok terbaru
-        blocks.slice(0, 10).forEach((block, index) => {
-            const blockElement = document.createElement("div");
-            blockElement.className = "block-card new-block"; // Tambah animasi masuk
-
-            // Konversi timestamp ke waktu yang bisa dibaca
-            const blockTime = new Date(block.timestamp * 1000);
-            const formattedTime = blockTime.toLocaleTimeString("en-GB");
-
-            blockElement.innerHTML = `
-                <div>
-                    <div class="block-hash">${block.id}</div>
-                    <div class="block-details">
-                        <span>Height: ${block.height}</span>
-                        <span>Transactions: ${block.tx_count}</span>
-                        <span>Size: ${(block.size / 1024).toFixed(2)} KB</span>
-                        <span>Time: ${formattedTime}</span>
-                    </div>
-                </div>
-                <div class="block-height">Block #${block.height}</div>
-            `;
-
-            // Tambahkan blok ke daftar dengan animasi delay
-            setTimeout(() => {
-                blockElement.classList.add("fade-in");
-            }, index * 200); // Tambahkan delay animasi tiap blok
-
-            blocksList.appendChild(blockElement);
-        });
-    } catch (error) {
-        console.error("Error fetching blocks:", error);
-    }
-}
-
-// Ambil blok terbaru setiap 10 detik
-setInterval(fetchBitcoinBlocks, 10000);
-
-// Init saat halaman dimuat
-document.addEventListener("DOMContentLoaded", fetchBitcoinBlocks);</script>
-
-<style>
-    .music-player {
-        position: fixed;
-        bottom: 20px;
-        right: 60px;
-        z-index: 100;
-    }
-
-    .music-btn {
-        background: var(--primary);
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        cursor: pointer;
-        font-size: 15px;
-        border-radius: 50%;
-    }
-</style>
 
 <style>
 /* Tambahkan CSS khusus Solana */
