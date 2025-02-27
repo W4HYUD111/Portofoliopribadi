@@ -485,6 +485,58 @@
     display: none;
 }
 
+/* Loading Screen Styles */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #050a0e; /* Warna background gelap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.cyberpunk-loader {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #00ffff; /* Warna neon cyan */
+    border-top: 5px solid #ff00ff; /* Warna neon magenta */
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite, glow 1.5s infinite alternate;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.8); }
+    100% { box-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(255, 0, 255, 1); }
+}
+
+.loading-text {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #00ffff; /* Warna neon cyan */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.8);
+    animation: glitchText 1.5s infinite alternate;
+}
+
+@keyframes glitchText {
+    0% { text-shadow: 2px 2px 5px magenta, -2px -2px 5px cyan; }
+    50% { text-shadow: -2px -2px 5px magenta, 2px 2px 5px cyan; }
+    100% { text-shadow: 2px -2px 5px magenta, -2px 2px 5px cyan; }
+}
 
 </style>
 
@@ -493,6 +545,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 <body>
+  
+  <div id="loading-screen">
+    <div class="loading-content">
+        <div class="cyberpunk-loader"></div>
+        <p class="loading-text">Loading...</p>
+    </div>
+</div>
+  
     <nav>
     <div class="logo-container">
         <a class="logo">PORTFOLIO</a>
@@ -1584,3 +1644,12 @@ btc-verify {
 }
 </style>
 
+<script>window.addEventListener("load", function () {
+    const loadingScreen = document.getElementById("loading-screen");
+    setTimeout(() => {
+        loadingScreen.style.opacity = "0";
+        setTimeout(() => {
+            loadingScreen.style.display = "none";
+        }, 1000); // Waktu transisi fade out
+    }, 2000); // Waktu tampilan loading screen (2 detik)
+});</script>
