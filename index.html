@@ -1,1677 +1,2601 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio - MUHAMMAD EKO WAHYUDI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Eko Wahyudi | Blockchain Specialist & Digital Investor</title>
+    <meta name="description" content="Professional portfolio of Muhammad Eko Wahyudi - Blockchain enthusiast, digital investor, and financial analyst">
+    <meta name="keywords" content="blockchain, cryptocurrency, digital investment, financial analysis, smart contracts">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0095F6;
-            --secondary: #2ECC71;
-            --dark: #1a1a1a;
-            --light: #ffffff;
-        }* {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Arial', sans-serif;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-  body {
-      background-color: #050a0e;
-      color: #0ff;
-      position: relative;
-      overflow-x: hidden
-      font-family: 'Orbitron', sans-serif;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    /* Background Grid */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(0deg, rgba(0,255,255,0.3) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(0,255,255,0.3) 1px, transparent 1px);
-      background-size: 50px 50px;
-      animation: gridMove 4s linear infinite;
-      z-index: -1;
-    }
-
-    @keyframes gridMove {
-      0% { background-position: 0 0, 0 0; }
-      100% { background-position: 50px 50px, 50px 50px; }
-    }
-        
-        
-        
-
-    /* Navigation */
-    nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: #1a1a1a;
-        padding: 1rem 5%;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        z-index: 1000;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    
-
-.logo {
-    font-size: 24px;
-    font-weight:bolde;
-    color: #00ffff; /* Neon cyan */
-    text-shadow: 2px 2px 5px magenta, -2px -2px 5px cyan;
-    animation: glitchText 1.5s infinite alternate;
-}
-
-}
-
-@keyframes glitchText {
-    0% { text-shadow: 2px 2px 5px magenta, -2px -2px 5px cyan; }
-    50% { text-shadow: -2px -2px 5px magenta, 2px 2px 5px cyan; }
-    100% { text-shadow: 2px -2px 5px magenta, -2px 2px 5px cyan; }
-}
-
-    .nav-links {
-        display: flex;
-        gap: 2rem;
-    }
-
-    .nav-links a {
-        text-decoration: none;
-        color: var(--primary);
-        transition: 0.3s;
-        font-weight: 500;
-    }
-
-    .nav-links a:hover {
-        color: var(--secondary);
-    }
-
-    .menu-toggle {
-        display: none;
-        cursor: pointer;
-        font-size: 1.5rem;
-        color: var(--secondary);
-    }
-
-    /* Hero Section */
-    .hero {
-        padding: 8rem 5% 4rem;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-
-    .profile-img {
-    flex: 1 1 250px;
-    max-width: 250px;
-    border-radius: 15px; /* Sudut kotak tapi melengkung */
-    border: 5px solid var(--primary);
-    overflow: hidden;
-    animation: float 2s ease-in-out infinite, glowAnimation 2s infinite alternate;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.9), 0 0 30px rgba(0, 255, 255, 0.7);
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.profile-img:hover {
-    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
-    border-color: #ff00ff;
-}
-
-@keyframes glowAnimation {
-    0% {
-        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-    }
-    100% {
-        box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
-    }
-}
-
-.profile-img img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px; /* Sesuaikan dengan container */
-    transition: transform 0.3s ease-in-out;
-}
-
-.profile-img:hover img {
-    transform: scale(1.05);
-}
-
-    .hero-content {
-        flex: 1 1 400px;
-    }
-    
-  
-  .hero-content h1 {
-    font-size: 3rem;
-    background: linear-gradient(90deg, #00ffff, #ff00ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.8);
-}
-
-
-.hero-content p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 0 4px rgba(0, 255, 255, 0.6);
-    line-height: 1.6;
-}
-    
-    /* Styling untuk section Hobi */
-.hobbies {
-    padding: 4rem 5%;
-    background-color: transparent;
-    color: #0ff;
-}
-   
-
-.hobbies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.hobby-card {
-    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid rgba(0, 255, 255, 0.8);
-    position: relative;
-}
-
-.hobby-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
-    border-color: rgba(255, 0, 255, 0.9);
-}
-
-.hobby-card::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
-    z-index: -1;
-    filter: blur(8px);
-    opacity: 0.7;
-    border-radius: 14px;
-}
-
-@keyframes glitch {
-    0% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
-    25% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-2px); }
-    50% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(2px); }
-    75% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-1px); }
-    100% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
-}
-
- @keyframes glitch {
-    0% { text-shadow: 3px 0 cyan, -3px 0 magenta, 0 3px lime; transform: translateX(0); }
-    20% { text-shadow: -3px 0 cyan, 3px 0 magenta, 0 -3px lime; transform: translateX(-0.8px); }
-    40% { text-shadow: 3px 3px cyan, -3px -3px magenta, -3px 3px lime; transform: translateX(0.8px); }
-    60% { text-shadow: -3px -3px cyan, 3px 3px magenta, 3px -3px lime; transform: translateX(-0.5px); }
-    80% { text-shadow: 3px -3px cyan, -3px 3px magenta, -3px -3px lime; transform: translateX(0.5px); }
-    100% { text-shadow: -3px 3px cyan, 3px -3px magenta, 3px 3px lime; transform: translateX(0); }
-}
-
-@keyframes color-random {
-    0% { color: cyan; }
-    50% { color: magenta; }
-    100% { color: lime; }
-}
-
-.glitch {
-    font-size: 2.5rem;
-    font-weight: 700;
-    font-family: 'Orbitron', sans-serif;
-    position: relative;
-    text-transform: uppercase;
-    color: cyan;
-    animation: glitch 4s infinite alternate ease-in-out, color-random 4s infinite;
-}
-
-.hobby-card i {
-    font-size: 3rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.hobby-card h3 {
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-}
-
-.hobby-card p {
-    font-size: 0.9rem;
-    color: #cccccc;
-}
-
-
-
-    /* Projects Section */
-    .projects {
-        padding: 4rem 5%;
-    }
-
-    .project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-    }
-    
-.project-card {
-    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid rgba(0, 255, 255, 0.8);
-    position: relative;
-}
-
-.project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
-    border-color: rgba(255, 0, 255, 0.9);
-}
-
-.project-card::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
-    z-index: -1;
-    filter: blur(8px);
-    opacity: 0.7;
-    border-radius: 14px;
-}
-
-@keyframes glitch {
-    0% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
-    25% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-2px); }
-    50% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(2px); }
-    75% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-1px); }
-    100% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
-}
-
- @keyframes glitch {
-    0% { text-shadow: 3px 0 cyan, -3px 0 magenta, 0 3px lime; transform: translateX(0); }
-    20% { text-shadow: -3px 0 cyan, 3px 0 magenta, 0 -3px lime; transform: translateX(-0.8px); }
-    40% { text-shadow: 3px 3px cyan, -3px -3px magenta, -3px 3px lime; transform: translateX(0.8px); }
-    60% { text-shadow: -3px -3px cyan, 3px 3px magenta, 3px -3px lime; transform: translateX(-0.5px); }
-    80% { text-shadow: 3px -3px cyan, -3px 3px magenta, -3px -3px lime; transform: translateX(0.5px); }
-    100% { text-shadow: -3px 3px cyan, 3px -3px magenta, 3px 3px lime; transform: translateX(0); }
-}
-
-@keyframes color-random {
-    0% { color: cyan; }
-    50% { color: magenta; }
-    100% { color: lime; }
-}
-
-  
-   .project-card a {
-    color: var(--secondary);
-    font-weight: bold; /* Jika ingin huruf lebih tebal */
-}
-
-.project-card p {
-  color: #cccccc;
-}
-
-.project-card {
-    text-decoration: none; /* Menghilangkan garis bawah */
-    color: #00aaff; /* Sesuaikan warna teks */
-}
-
-.project-card h3{
-  color: var(--primary);
-}
-    
-.social-media {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.social-media a {
-    display: inline-block;
-    font-size: 24px;
-    color: #00bcd4; /* Warna neon cyan */
-    transition: transform 0.2s ease-in-out;
-    text-decoration: none;
-}
-
-@keyframes glitch {
-    0% { transform: translateX(0); text-shadow: -2px 0 cyan, 2px 0 magenta; }
-    20% { transform: translateX(-2px); text-shadow: -3px 0 cyan, 3px 0 magenta; }
-    40% { transform: translateX(2px); text-shadow: -2px 0 magenta, 2px 0 cyan; }
-    60% { transform: translateX(-1px); text-shadow: -4px 0 cyan, 4px 0 magenta; }
-    80% { transform: translateX(1px); text-shadow: -2px 0 magenta, 2px 0 cyan; }
-    100% { transform: translateX(0); text-shadow: -2px 0 cyan, 2px 0 magenta; }
-}
-
-.social-media a:hover {
-    animation: glitch 0.3s infinite alternate;
-}
-
-    /* Animations */
-    @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-20px); }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .nav-links {
-            position: absolute;
-            top: 100%;
-            left: -100%;
-            width: 100%;
-            background: var(--light);
-            flex-direction: column;
-            padding: 1rem;
-            transition: 0.3s;
+            --primary: #00f0ff;
+            --secondary: #ff00f5;
+            --accent: #00ff88;
+            --dark: #050a0e;
+            --darker: #020507;
+            --light: #e0f8ff;
+            --lighter: #f5fcff;
+            --neon-glow: 0 0 10px var(--primary), 0 0 20px rgba(0, 240, 255, 0.5);
+            --neon-glow-secondary: 0 0 10px var(--secondary), 0 0 20px rgba(255, 0, 245, 0.5);
+            --section-padding: 6rem 5%;
+            --card-border-radius: 12px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
         }
 
-        .nav-links.active {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Cyberpunk Grid Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -2;
+        }
+
+        /* Animated Scanline Effect */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                transparent 95%,
+                rgba(0, 240, 255, 0.1) 96%,
+                transparent 97%
+            );
+            background-size: 100% 10px;
+            animation: scanline 8s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes scanline {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: rgba(224, 248, 255, 0.8);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section {
+            padding: var(--section-padding);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            text-shadow: var(--neon-glow);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            bottom: -10px;
+            left: 20%;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 10, 14, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            padding: 1rem 5%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-shadow: var(--neon-glow);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            text-shadow: var(--neon-glow);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            text-shadow: var(--neon-glow);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
         }
 
         .menu-toggle {
-    display: block; /* Tampilkan tombol di mode mobile */
-    cursor: pointer;
-    font-size: 2rem;
-    color: #00ffff;
-    transition: transform 0.3s ease;
-    animation: glitchText 1.5s infinite alternate;
-}
-
-
-
-/* Tambahkan di bagian CSS */
-.loading-spinner {
-    animation: spin 1s linear infinite;
-    margin-right: 8px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.submit-btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-
-.menu-toggle.active {
-    transform: rotate(90deg);
-}
-
-        .hero {
-            text-align: center;
-            flex-direction: column;
-        }
-    }
-
-
-/* Style untuk tombol hamburger */
-.menu-toggle {
-    display: none; /* Sembunyikan di desktop */
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #00ffff; /* Warna neon cyan */
-    transition: transform 0.3s ease;
-    z-index: 1001; /* Pastikan di atas elemen lain */
-}
-
-/* Tampilkan di mode mobile */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-}
-
-/* Animasi rotasi saat aktif */
-.menu-toggle.active {
-    transform: rotate(90deg);
-}
-
-/* Ganti ikon saat aktif */
-.menu-toggle.active i.fa-bars {
-    display: none; /* Sembunyikan ikon hamburger */
-}
-
-.menu-toggle.active i.fa-times {
-    display: inline-block; /* Tampilkan ikon silang */
-}
-
-/* Sembunyikan ikon silang secara default */
-.menu-toggle i.fa-times {
-    display: none;
-}
-
-/* Loading Screen Styles */
-#loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #050a0e; /* Warna background gelap */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 1s ease-out;
-}
-
-.loading-content {
-    text-align: center;
-}
-
-.cyberpunk-loader {
-    width: 60px;
-    height: 60px;
-    border: 5px solid #00ffff; /* Warna neon cyan */
-    border-top: 5px solid #ff00ff; /* Warna neon magenta */
-    border-radius: 50%;
-    animation: spin 1.5s linear infinite, glow 1.5s infinite alternate;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes glow {
-    0% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.8); }
-    100% { box-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(255, 0, 255, 1); }
-}
-
-.loading-text {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #00ffff; /* Warna neon cyan */
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.8);
-    animation: glitchText 1.5s infinite alternate;
-}
-
-@keyframes glitchText {
-    0% { text-shadow: 2px 2px 5px magenta, -2px -2px 5px cyan; }
-    50% { text-shadow: -2px -2px 5px magenta, 2px 2px 5px cyan; }
-    100% { text-shadow: 2px -2px 5px magenta, -2px 2px 5px cyan; }
-}
-
-</style>
-
-</head>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-<body>
-  
-  <div id="loading-screen">
-    <div class="loading-content">
-        <div class="cyberpunk-loader"></div>
-        <p class="loading-text">Loading...</p>
-    </div>
-</div>
-  
-    <nav>
-    <div class="logo-container">
-        <a class="logo">PORTFOLIO</a>
-        
-
-<audio id="bg-music" autoplay loop>
-    <source src="Perturbator - Future Club (Cyberpunk 2077).mp3" type="audio/mpeg">
-    Your browser does not support the audio tag.
-</audio>
-
-    </div>
-    <div class="menu-toggle">
-    <i class="fas fa-bars"></i> <!-- Ikon hamburger -->
-    <i class="fas fa-times"></i> <!-- Ikon silang -->
-</div>
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#hobbies">Hobbies</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
-    
-    <section id="home" class="hero">
-    <div class="profile-img">
-        <img src="Picsart_25-02-08_13-10-07-459.jpg" alt="Foto Profil">
-    </div>
-    <div class="hero-content">
-        <h1>Hey, I'm MUHAMMAD EKO </h1>
-        <h2>I'm a STUDENT & INVESTOR</h2>
-        <p>Driven by curiosity in blockchain technology, I actively study and build decentralized applications while making informed investments in digital assets and Web3 projects.</p>
-        <div class="social-media">
-            <a href="https://www.instagram.com/thisis_exoo?igsh=NGR4MHh3dG5pbjYw"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/exo_wahyud1?t=Vmo2ZTMl8rtnK15nBHOSaw&s=09"><i class="fab fa-twitter"></i></a>
-            <a href="https://github.com/W4HYUD111"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/muhammad-eko-wahyudi?trk=contact-info"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </div>
-</section>
-
-<!-- Tambahkan setelah section Skills -->
-<section id="hobbies" class="hobbies">
-   <h2 class="glitch">Hobbies</h2>
-    <div class="hobbies-grid">
-        <!-- Membaca -->
-        <div class="hobby-card">
-            <i class="fas fa-book-open"></i>
-            <h3>Membaca</h3>
-            <p>Saya suka membaca buku tentang teknologi, keuangan, dan pengembangan diri.</p>
-        </div>
-
-        <!-- Berinvestasi -->
-        <div class="hobby-card">
-            <i class="fas fa-chart-line"></i>
-            <h3>Berinvestasi</h3>
-            <p>Saya aktif berinvestasi di pasar saham, cryptocurrency, dan aset digital lainnya.</p>
-        </div>
-
-        <!-- Calisthenics -->
-        <div class="hobby-card">
-            <i class="fas fa-dumbbell"></i>
-            <h3>Calisthenics</h3>
-            <p>Saya menikmati latihan calisthenics untuk menjaga kebugaran dan kekuatan tubuh.</p>
-        </div>
-    </div>
-</section>
-
-<section id="education" class="education">
-<h2 class="glitch">Education</h2>
-        <div class="education-grid">
-            <a href="https://maps.app.goo.gl/YR3Gxxvc7t3Gefu57?g_st=ac" target="_blank" class="education-card">
-                <h3>MI NU AL-FAQIH</h3>
-                <p>2013 - 2019</p>
-                <p>Ngerong - Gempol - Pasuruan <i class="fas fa-external-link-alt"></i></p>
-            </a>
-            <a href="https://maps.app.goo.gl/mc3J2JpAhrohWmp17" target="_blank" class="education-card">
-                <h3>MTs. NU AL-FAQIHIYAH</h3>
-                <p>2019 - 2022</p>
-                <p>Randu Pitu - Gempol - Pasuruan <i class="fas fa-external-link-alt"></i></p>
-            </a>
-            <a href="https://maps.app.goo.gl/mc3J2JpAhrohWmp17" target="_blank" class="education-card">
-                <h3>MA NU AL-FAQIHIYAH</h3>
-                <p>2022 - Sekarang</p>
-                <p>Randu Pitu - Gempol - Pasuruan <i class="fas fa-external-link-alt"></i></p>
-            </a>
-             <a href="https://maps.app.goo.gl/NpZX1KBaempZvjT2A" target="_blank" class="education-card">
-                <h3>Pondok Pesantren SALAFIYAH AL-FAQIH</h3>
-                <p>2010 - 2020</p>
-                <p>Ngerong - Gempol - Pasuruan <i class="fas fa-external-link-alt"></i></p>
-            </a>
-        </div>
-    </section>
-
-<section id="projects" class="projects">
-   <h2 class="glitch">Project</h2>
-    <div class="project-grid">
-        <div class="project-card">
-            <h3>Smart Contract CID</h3>
-            <p>Smart Contract berbasis Blockchain untuk penyimpanan terdecentralisasi.</p>
-            <a href="https://ipfs.io/ipfs/bafkreibieobuimymzly2gpbrk6n7fy5ltqf2jkm76754pgenym64dq6f2u"
-            target="_blank">lihat proyek</a> >>>
-        </div>
-        <div class="project-card">
-            <h3>COMING SOON!</h3>
-            <p></p>
-        </div>
-    </div>
-</section>
-
-<section id="skills" class="skills">
-   <h2 class="glitch">Skills</h2>
-    <div class="skills-grid">
-      
-      <div class="skill-card">
-  <i class="fas fa-chart-bar"></i>
-  <h3>Economic Data Analysis</h3>
-  <p>Statistical Modeling, Data Visualization, Forecasting</p>
-</div>
-
-<div class="skill-card">
-  <i class="fas fa-coins"></i> <!-- Ikon yang melambangkan keuangan -->
-  <h3>Financial Data Analysis</h3>
-  <p>Investment Analysis, Risk Assessment, Market Trends</p>
-</div>
-      
-        <div class="skill-card">
-            <i class="fas fa-file-excel"></i>
-            <h3>Microsoft Excel</h3>
-            <p>Advanced Data Analysis, Formulas, Dashboard Creation</p>
-        </div>
-        <div class="skill-card">
-            <i class="fas fa-file-word"></i>
-            <h3>Microsoft Word</h3>
-            <p>Document Formatting, Report Writing,  Merge</p>
-        </div>
-        <div class="skill-card">
-          <i class="fas fa-file-alt"></i>
-          <h3>Google Docs</h3>
-          <p>Collaborative Editing, Cloud-Based Documents, Formatting</p>
-          </div>
-          <div class="skill-card">
-            <i class="fas fa-table"></i>
-            <h3>Google Spread</h3>
-            <p>Data Analysis, Formulas, Real-Time Collaboration</p>
-            </div>
-    </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<section id="contact" class="contact">
-    <h2 class="glitch">Contact</h2>
-    <div class="contact-container">
-        <div class="contact-form">
-            <form id="contactForm" action="https://formspree.io/f/mdkallnj" method="POST">
-                <div class="form-group">
-                    <label for="name">Nama</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Pesan</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i> Kirim Pesan
-                </button>
-            </form>
-        </div>
-
-        <!-- Informasi Kontak -->
-        <div class="contact-info">
-            <div class="info-card">
-                <i class="fas fa-envelope email-icon"></i>
-                <h3>Email</h3>
-                <p>meko7615@gmail.com</p>
-            </div>
-            <div class="info-card">
-                <i class="fas fa-phone whatsapp-icon"></i>
-                <h3>WhatsApp</h3>
-                <p>+62 895-2502-7398</p>
-                <a href="https://wa.me/6289525027398"
-                 target="_blank"
-                 class="WhatsApp-link">Chat! »»</a>
-            </div>
-                <div class="info-card">
-                <i class="fas fa-file-pdf pdf-icon"></i>
-                <h3>CV</h3>
-                <p>(Curriculum Vitae)</p>
-                <a href="https://drive.google.com/file/d/1WFKmI6YA0_Vc3vrM35vioL7fHThHeSsF/view?usp=drivesdk" 
-                   target="_blank" 
-                   class="cv-link">Lihat »»</a>
-        </div>
-    </div>
-</section>
-
-
-<section id="donate" class="donations">
-   <h2 class="glitch">Donation Crypto</h2>
-    <div class="crypto-grid">
-        <!-- Bitcoin -->
-        <div class="crypto-card">
-            <div class="crypto-header">
-                <i class="fab fa-bitcoin"></i>
-                <h3>Bitcoin (BTC)</h3>
-            </div>
-            <img src="1739074853064.jpg" 
-                 alt="BTC QR Code" 
-                 class="qr-code">
-            <div class="wallet-address" onclick="copyAddress(this)">
-                <span>1CU4MBc8aV67Xc4wqfG7
-                86pVdMWtcN2uwf</span>
-                <i class="fas fa-copy"></i>
-            </div>
-            <small class="btc-verify">
-              <a href="https://mempool.space/address/1CU4MBc8aV67Xc4wqfG786pVdMWtcN2uwf" target="_blank"> Mempool.space</a> »»
-            </small>
-        </div>
-
-        <!-- Ethereum -->
-        <div class="crypto-card">
-            <div class="crypto-header">
-                <p class="fab fa-ethereum"></p>
-                <h3>Ethereum (ETH)</h3>
-            </div>
-            <img src="1739074624741.jpg" 
-                 alt="ETH QR Code" 
-                 class="qr-code">
-            <div class="wallet-address" onclick="copyAddress(this)">
-                <span>0xf72B1355d7C8570Ef6
-                7d8AdF914eDa77f17B67F8</span>
-                <i class="fas fa-copy"></i>
-            </div>
-            <small class="ethereum-verify">
-              <a href="https://etherscan.io/address/0xf72B1355d7C8570Ef67d8AdF914eDa77f17B67F8" target="_blank"> Etherscan
-              </a> »»
-            </small>
-        </div>
-
-<div class="crypto-card">
-    <div class="crypto-header">
-       <img src="solana-sol-logo.svg"</span>
-       <h3>Solana (SOL)</h3>
-    </div>
-    <img src="1739458891523.jpg" 
-         alt="SOL QR Code" 
-         class="qr-code">
-    <div class="wallet-address" onclick="copyAddress(this)">
-        <span>8cDs1DHwYs4xzqPJMmAFEL
-        jtedEDszkELMwie9tpeSY7</span>
-        <i class="fas fa-copy"></i>
-    </div>
-    <small class="solana-verify">
-        <a href="https://solscan.io/account/8cDs1DHwYs4xzqPJMmAFELjtedEDszkELMwie9tpeSY7" target="_blank">Solscan
-        </a> »»
-    </small>
-</div>
-</section>
-
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            // Toggle class 'active' pada tombol
-            menuToggle.classList.toggle('active');
-
-            // Toggle class 'active' pada menu navigasi
-            navLinks.classList.toggle('active');
-
-            // Ganti ikon
-            const barsIcon = menuToggle.querySelector('.fa-bars');
-            const timesIcon = menuToggle.querySelector('.fa-times');
-
-            if (menuToggle.classList.contains('active')) {
-                barsIcon.style.display = 'none';
-                timesIcon.style.display = 'inline-block';
-            } else {
-                barsIcon.style.display = 'inline-block';
-                timesIcon.style.display = 'none';
-            }
-        });
-    }
-});
-</script>
-
-<script>
-    // Scroll Animation
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    document.querySelectorAll('.project-card').forEach((card) => {
-        observer.observe(card);
-    });
-
-    // Close mobile menu on click outside
-    document.addEventListener('click', (e) => {
-        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-            navLinks.classList.remove('active');
-        }
-    });
-</script>
-
-<script>window.addEventListener("load", () => {
-    const audio = document.getElementById("bg-music");
-
-    // Coba play otomatis
-    const playPromise = audio.play();
-
-    if (playPromise !== undefined) {
-        playPromise
-            .then(() => {
-                // Jika autoplay berhasil, hapus mute
-                audio.muted = false;
-            })
-            .catch(() => {
-                // Jika autoplay gagal, tampilkan tombol play manual
-                const playButton = document.createElement("button");
-                playButton.innerText = "Play Music";
-                playButton.style.position = "fixed";
-                playButton.style.bottom = "20px";
-                playButton.style.right = "20px";
-                playButton.style.padding = "10px 20px";
-                playButton.style.backgroundColor = "#00ffcc";
-                playButton.style.color = "#000";
-                playButton.style.border = "none";
-                playButton.style.cursor = "pointer";
-                playButton.style.zIndex = "1000";
-
-                document.body.appendChild(playButton);
-
-                playButton.addEventListener("click", () => {
-                    audio.play();
-                    playButton.remove(); // Hapus tombol setelah diklik
-                });
-            });
-    }
-});</script>
-
-</body>
-</html>
-<footer>
-</div>
-    <!-- Tambahkan GIF di sini -->
-    <div class="footer-gif">
-        <img src="884ecb28e4132c084ec6be43a90e495b.gif" alt="Animasi Footer">
-    </div>
-    <p>&copy; 2025 MUHAMMAD EKO WAHYUDI. All Rights Reserved.</p>
-</footer>
-
-<style>
-    footer {
-        text-align: center;
-        padding: 2rem 5%;
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--light);
-        position: relative;
-    }
-
-    .footer-gif {
-        margin-bottom: 1rem;
-    }
-
-    .footer-gif img {
-        width: 100px; /* Sesuaikan ukuran GIF */
-        height: auto;
-        border-radius: 10px; /* Opsional: untuk sudut melengkung */
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Opsional: untuk efek bayangan */
-    }
-
-    /* Animasi untuk GIF (opsional) */
-    @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
-
-    .footer-gif img {
-        animation: float 3s ease-in-out infinite; /* Terapkan animasi */
-    }
-
-</style>
-</footer>
-<style>
-        .education {
-            padding: 4rem 5%;
-        }
-
-        .education-grid {
-          background: transparent;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-   .education-card {
-    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid rgba(0, 255, 255, 0.8);
-    position: relative;
-}
-
-.education-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
-    border-color: rgba(255, 0, 255, 0.9);
-}
-
-.education-card::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
-    z-index: -1;
-    filter: blur(8px);
-    opacity: 0.7;
-    border-radius: 14px;
-}
-
-@keyframes glitch {
-    0% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
-    25% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-2px); }
-    50% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(2px); }
-    75% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-1px); }
-    100% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
-}
-
- @keyframes glitch {
-    0% { text-shadow: 3px 0 cyan, -3px 0 magenta, 0 3px lime; transform: translateX(0); }
-    20% { text-shadow: -3px 0 cyan, 3px 0 magenta, 0 -3px lime; transform: translateX(-0.8px); }
-    40% { text-shadow: 3px 3px cyan, -3px -3px magenta, -3px 3px lime; transform: translateX(0.8px); }
-    60% { text-shadow: -3px -3px cyan, 3px 3px magenta, 3px -3px lime; transform: translateX(-0.5px); }
-    80% { text-shadow: 3px -3px cyan, -3px 3px magenta, -3px -3px lime; transform: translateX(0.5px); }
-    100% { text-shadow: -3px 3px cyan, 3px -3px magenta, 3px 3px lime; transform: translateX(0); }
-}
-
-@keyframes color-random {
-    0% { color: cyan; }
-    50% { color: magenta; }
-    100% { color: lime; }
-}
-
-        .education-card h3 {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-.education-card {
-    text-decoration: none; /* Menghilangkan garis bawah */
-    color: #00aaff; /* Sesuaikan warna teks */
-}
-        .education-card p {
-            margin: 0.3rem 0;
-            color: #cccccc;
-            font-size: 0.9rem;
-        }
-
-        .fa-external-link-alt {
-            font-size: 0.8rem;
-            margin-left: 5px;
-            color: var(--secondary);
+            z-index: 1001;
         }
         
-    </style>
-
-    <!-- Update script untuk animasi -->
-    <script>
-        // Tambahkan observer untuk education cards
-        document.querySelectorAll('.education-card').forEach((card) => {
-            observer.observe(card);
-        });
-    </script>
-</body>
-</html>
-
-<style>
-    .skills {
-        padding: 4rem 5%;
-        background: transparent;
-        color: #0ff;
-    }
-
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        /* Hero Section */
+    .hero {
+        min-height: 100vh;
+        padding: 8rem 5% 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 2rem;
-        margin-top: 2rem;
+        position: relative;
+        overflow: hidden;
+        flex-direction: row; /* Memastikan foto di kiri pada desktop */
     }
 
-    
-.skill-card {
-    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid rgba(0, 255, 255, 0.8);
-    position: relative;
-}
-
-.skill-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
-    border-color: rgba(255, 0, 255, 0.9);
-}
-
-.skill-card::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
-    z-index: -1;
-    filter: blur(8px);
-    opacity: 0.7;
-    border-radius: 14px;
-}
-
-    .skill-card i {
-        font-size: 3rem;
-        color: var(--primary);
-        margin-bottom: 1rem;
+    .profile-img-container {
+        flex: 1;
+        max-width: 350px;
+        position: relative;
+        margin: 0 auto;
     }
 
-    .skill-card h3 {
-        color: var(--primary);
-        margin-bottom: 0.5rem;
+    ..hero-content {
+        flex: 2;
+        text-align: left;
     }
 
-    .skill-card p {
-        font-size: 0.9rem;
-        color: #cccccc;
+    @media (max-width: 768px) {
+        .hero {
+            flex-direction: column;
+            text-align: center;
+        }
+        .profile-img-container {
+            max-width: 250px;
+        }
+        .hero-content {
+            text-align: center;
+        }
     }
 
-</style>
-<script>
-    // Animasi untuk skill cards
-    document.querySelectorAll('.skill-card').forEach((card) => {
-        observer.observe(card);
-    });
-</script>
-
- <style>
-    .contact {
-        padding: 4rem 5%;
-        background: transparent;
-        color: var(--dark);
+    .hero::before {
+        content: '';
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
+        top: -100px;
+        right: -100px;
+        z-index: -1;
     }
 
-    .contact-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
+    .hero::after {
+        content: '';
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 0, 245, 0.1) 0%, transparent 70%);
+        bottom: -100px;
+        left: -100px;
+        z-index: -1;
     }
 
-   .contact-form {
-    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid rgba(0, 255, 255, 0.8);
-    position: relative;
-}
-
-.contact-form:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
-    border-color: rgba(255, 0, 255, 0.9);
-}
-
-.contact-form::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
-    z-index: -1;
-    filter: blur(8px);
-    opacity: 0.7;
-    border-radius: 14px;
-}
-
-@keyframes glitch {
-    0% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
-    25% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-2px); }
-    50% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(2px); }
-    75% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-1px); }
-    100% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
-}
-
- @keyframes glitch {
-    0% { text-shadow: 3px 0 cyan, -3px 0 magenta, 0 3px lime; transform: translateX(0); }
-    20% { text-shadow: -3px 0 cyan, 3px 0 magenta, 0 -3px lime; transform: translateX(-0.8px); }
-    40% { text-shadow: 3px 3px cyan, -3px -3px magenta, -3px 3px lime; transform: translateX(0.8px); }
-    60% { text-shadow: -3px -3px cyan, 3px 3px magenta, 3px -3px lime; transform: translateX(-0.5px); }
-    80% { text-shadow: 3px -3px cyan, -3px 3px magenta, -3px -3px lime; transform: translateX(0.5px); }
-    100% { text-shadow: -3px 3px cyan, 3px -3px magenta, 3px 3px lime; transform: translateX(0); }
-}
-
-@keyframes color-random {
-    0% { color: cyan; }
-    50% { color: magenta; }
-    100% { color: lime; }
-}
-
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-        color: var(--primary);
-    }
-
-    .form-group input,
-    .form-group textarea {
+    .profile-img {
         width: 100%;
-        padding: 0.8rem;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 1rem;
-        transition: border-color 0.3s;
+        border-radius: var(--card-border-radius);
+        border: 3px solid var(--primary);
+        box-shadow: var(--neon-glow);
+        transition: var(--transition);
+        position: relative;
+        z-index: 1;
+        transform: translateY(10px);
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-        border-color: var(--primary);
+    .profile-img-container::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--card-border-radius);
+        background: var(--primary);
+        top: 15px;
+        left: 15px;
+        z-index: 0;
+        opacity: 0.3;
+        filter: blur(20px);
+        transition: var(--transition);
+    }
+
+    .profile-img-container:hover .profile-img {
+        transform: translate(-5px, -5px);
+        box-shadow: 
+            0 0 20px var(--primary),
+            0 0 40px rgba(0, 240, 255, 0.7),
+            5px 5px 0 var(--secondary);
+    }
+
+    .profile-img-container:hover::before {
+        transform: translate(5px, 5px);
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        margin-bottom: 0.5rem;
+        line-height: 1.1;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: none;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+        margin-bottom: 0.5rem;
+        color: var(--light);
+        font-weight: 400;
+        position: relative;
+        display: inline-block;
+    }
+
+    .hero-subtitle::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background: linear-gradient(90deg, var(--primary), transparent);
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 0.5rem;
+        color: rgba(224, 248, 255, 0.9);
+        max-width: 600px;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 2rem;
+        border-radius: 5px;
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        text-align: center;
+        font-size: 1rem;
+        border: none;
         outline: none;
     }
 
-    .submit-btn {
-        background: var(--primary);
-        color: white;
-        padding: 0.8rem 2rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background 0.3s;
+    .btn-primary {
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        color: var(--darker);
     }
 
-    .submit-btn:hover {
-        background: var(--secondary);
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--neon-glow);
     }
 
-    .contact-info {
-        display: grid;
-        gap: 1.5rem;
-    }
-
-    .info-card {
-    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid rgba(0, 255, 255, 0.8);
-    position: relative;
-}
-
-.info-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
-    border-color: rgba(255, 0, 255, 0.9);
-}
-
-.info-card::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
-    z-index: -1;
-    filter: blur(8px);
-    opacity: 0.7;
-    border-radius: 14px;
-}
-
-@keyframes glitch {
-    0% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
-    25% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-2px); }
-    50% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(2px); }
-    75% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-1px); }
-    100% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
-}
-
- @keyframes glitch {
-    0% { text-shadow: 3px 0 cyan, -3px 0 magenta, 0 3px lime; transform: translateX(0); }
-    20% { text-shadow: -3px 0 cyan, 3px 0 magenta, 0 -3px lime; transform: translateX(-0.8px); }
-    40% { text-shadow: 3px 3px cyan, -3px -3px magenta, -3px 3px lime; transform: translateX(0.8px); }
-    60% { text-shadow: -3px -3px cyan, 3px 3px magenta, 3px -3px lime; transform: translateX(-0.5px); }
-    80% { text-shadow: 3px -3px cyan, -3px 3px magenta, -3px -3px lime; transform: translateX(0.5px); }
-    100% { text-shadow: -3px 3px cyan, 3px -3px magenta, 3px 3px lime; transform: translateX(0); }
-}
-
-@keyframes color-random {
-    0% { color: cyan; }
-    50% { color: magenta; }
-    100% { color: lime; }
-}
-    .info-card i {
-        font-size: 2rem;
+    .btn-secondary {
+        background: transparent;
         color: var(--primary);
+        border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+        background: rgba(0, 240, 255, 0.1);
+        transform: translateY(-3px);
+        box-shadow: var(--neon-glow);
+    }
+
+    .btn i {
+        margin-right: 8px;
+    }
+
+    .social-media {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.1rem;
+    }
+
+    .social-media a {
+        color: var(--light);
+        font-size: 1.5rem;
+        transition: var(--transition);
+        position: relative;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(0, 240, 255, 0.1);
+    }
+
+    .social-media a:hover {
+        color: var(--primary);
+        transform: translateY(-3px);
+        box-shadow: var(--neon-glow);
+        background: rgba(0, 240, 255, 0.2);
+    }
+
+        /* About Section */
+        .about {
+            background: rgba(2, 5, 7, 0.7);
+            backdrop-filter: blur(5px);
+            border-top: 1px solid rgba(0, 240, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-description {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            background: rgba(5, 10, 14, 0.5);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 5px;
+            padding: 1rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .skill-item:hover {
+            border-color: var(--primary)
+            box-shadow: var(--neon-glow);
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            color: var(--light);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(5, 10, 14, 0.5);
+            border-radius: var(--card-border-radius);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            border-color: var(--primary);
+            box-shadow: var(--neon-glow);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--light);
+        }
+
+        /* Card Grid Layout */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Card Styling */
+        .card {
+            background: rgba(2, 5, 7, 0.7);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: var(--card-border-radius);
+            padding: 2rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--neon-glow);
+            border-color: var(--primary);
+        }
+
+        .card:hover::before {
+            opacity: 0.3;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .card-description {
+            color: rgba(224, 248, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .card-link i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+
+        .card-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Education Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 15px 50px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+            box-shadow: var(--neon-glow);
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -12px;
+        }
+
+        .right::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 25px;
+            background: rgba(2, 5, 7, 0.7);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: var(--card-border-radius);
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+            height: 100%;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neon-glow);
+            border-color: var(--primary);
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-date i {
+            margin-right: 8px;
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-location {
+            color: rgba(224, 248, 255, 0.8);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-location i {
+            margin-right: 8px;
+        }
+
+        .timeline-description {
+            color: rgba(224, 248, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Projects Section */
+        /* Card Style */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--card-border-radius);
+    margin-bottom: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease; /* Transisi hanya untuk shadow */
+}
+
+/* Project Image - Zoom effect lebih halus */
+.project-image {
+    width: 100%;
+    height: 200px; /* Ukuran tetap untuk gambar */
+    object-fit: cover; /* Menjaga gambar tetap proporsional */
+    transition: transform 0.2s ease-in-out; /* Zoom halus pada gambar */
+}
+
+/* Project Overlay */
+.project-overlay {
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(2, 5, 7, 0.9), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+/* Project Tags */
+.project-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-tag {
+    background: rgba(0, 240, 255, 0.2);
+    color: var(--primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Project Title */
+.project-title {
+    font-size: 1.5rem;
+    color: var(--light);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* Project Description */
+.project-description {
+    color: rgba(224, 248, 255, 0.8);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Project Links */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Link Style */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 0.7rem;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Haluskan transisi untuk link */
+}
+
+/* Primary Link */
+.project-link-primary {
+    background: var(--primary);
+    color: var(--darker);
+}
+
+/* Secondary Link */
+.project-link-secondary {
+    background: transparent;
+    color: var(--light);
+    border: 1px solid var(--light);
+}
+
+/* Hover Effects for Primary Link */
+.project-link-primary:hover {
+    background: var(--accent);
+    transform: translateY(-2px); /* Efek hover ringan */
+}
+
+/* Hover Effects for Secondary Link */
+.project-link-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Card Hover Effects */
+.project-card:hover .project-image {
+    transform: scale(1.03); /* Efek zoom ringan pada gambar */
+}
+
+.project-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 240, 255, 0.3); /* Shadow yang lebih sederhana dan ringan */
+}
+
+        /* Experience Section */
+        .experience-item {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .experience-date {
+            flex: 0 0 100px;
+            margin-bottom: -5rem;
+            text-align: right;
+            color: var(--accent);
+            font-weight: 600;
+            padding-top: 0rem;
+        }
+
+        .experience-content {
+            flex: 1;
+            background: rgba(2, 5, 7, 0.7);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: var(--card-border-radius);
+            padding: 2rem;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+            position: relative;
+        }
+
+        .experience-content::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: var(--primary);
+            top: 20px;
+            left: -8px;
+            transform: rotate(45deg);
+            border-left: 1px solid rgba(0, 240, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .experience-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neon-glow);
+            border-color: var(--primary);
+        }
+
+        .experience-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            color: var(--light);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .experience-company i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+
+        .experience-description {
+            color: rgba(224, 248, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-skills {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-skill {
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: rgba(2, 5, 7, 0.7);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: var(--card-border-radius);
+            padding: 2.5rem;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .contact-form:hover {
+            box-shadow: var(--neon-glow);
+            border-color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: rgba(5, 10, 14, 0.5);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 5px;
+            color: var(--light);
+            font-family: inherit;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+
+        textarea.form-input {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: var(--darker);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--neon-glow);
+        }
+
+        .submit-btn i {
+            margin-right: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: rgba(2, 5, 7, 0.7);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: var(--card-border-radius);
+            padding: 2rem;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neon-glow);
+            border-color: var(--primary);
+        }
+
+        .info-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 1.5rem;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 240, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-title {
+            font-size: 1.3rem;
+        }
+
+        .info-content {
+            color: rgba(224, 248, 255, 0.9);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .info-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .info-link:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+
+        .info-link i {
+            margin-left: 8px;
+        }
+
+        /* Crypto Donations */
+        .crypto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .crypto-card {
+            background: rgba(2, 5, 7, 0.7);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: var(--card-border-radius);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .crypto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neon-glow);
+            border-color: var(--primary);
+        }
+
+        .crypto-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .crypto-icon {
+            font-size: 1.8rem;
+            margin-right: 1rem;
+        }
+
+        .btc-icon {
+            color: #f7931a;
+            height: 40px;
+        }
+
+        .eth-icon {
+            color: #627eea;
+            height: 40px;
+        }
+
+        .sol-icon {
+            color: #9945ff;
+        }
+        
+        .Solana-logo {
+            width: 28px;
+            max-width: 28px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .crypto-title {
+            font-size: 1.4rem;
+        }
+
+        .qr-code {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            background: white;
+            padding: 10px;
+        }
+
+        .wallet-address {
+            background: rgba(5, 10, 14, 0.5);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            font-family: monospace;
+            color: var(--light);
+            word-break: break-all;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .wallet-address:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+        }
+
+        .copy-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .wallet-address:hover .copy-icon {
+            opacity: 1;
+        }
+
+        .verify-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .verify-link:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+
+        .verify-link i {
+            margin-left: 8px;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(2, 5, 7, 0.7);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: var(--card-border-radius);
+            padding: 2rem;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neon-glow);
+            border-color: var(--primary);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            color: rgba(224, 248, 255, 0.9);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .testimonial-content::before,
+        .testimonial-content::after {
+            color: var(--primary);
+            font-size: 2rem;
+            line-height: 1;
+            position: absolute;
+        }
+
+        .testimonial-content::before {
+            content: '"';
+            top: -10px;
+            left: -15px;
+        }
+
+        .testimonial-content::after {
+            content: '"';
+            bottom: -30px;
+            right: -15px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+            border: 2px solid var(--primary);
+        }
+
+        .testimonial-info {flex: 1;
+        }
+            .testimonial-name {
+        font-weight: 600;
+        color: var(--light);
+        margin-bottom: 0.3rem;
+    }
+
+    .testimonial-position {
+        color: var(--accent);
+        font-size: 0.9rem;
+    }
+
+    /* Blog Section */
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .blog-card {
+        background: rgba(2, 5, 7, 0.7);
+        border: 1px solid rgba(0, 240, 255, 0.2);
+        border-radius: var(--card-border-radius);
+        overflow: hidden;
+        transition: var(--transition);
+        backdrop-filter: blur(5px);
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--neon-glow);
+        border-color: var(--primary);
+    }
+
+    .blog-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .blog-content {
+        padding: 1.5rem;
+    }
+
+    .blog-date {
+        color: var(--accent);
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .blog-date i {
+        margin-right: 8px;
+    }
+
+    .blog-title {
+        font-size: 1.3rem;
+        color: var(--light);
         margin-bottom: 1rem;
     }
 
-    .info-card h3 {
-        margin-bottom: 0.5rem;
-        color: var(--primary);
+    .blog-excerpt {
+        color: rgba(224, 248, 255, 0.8);
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
     }
 
-    .info-card p {
-      color: #cccccc;
-        margin: 0;
-        font-size: 0.9rem;
-    }
-    
-    .email-icon {
-    color: #D44638 !important;
-}
-
-.email-text {
-    color: #D44638 !important;
-}
-    
-.WhatsApp-link {
-    color: var(--secondary); /* Warna biru */
-}
-
-
-
-.whatsapp-icon {
-    color: #25D366 !important;
-}
-
-.pdf-icon {
-    color: #FF0000 !important;
-}
-
-.cv-link {
-    color: var(--secondary); /* Warna hijau */
-}
-
-    }
-</style>
-
-<script>document.getElementById("contactForm").addEventListener("submit", async function(event) {
-    event.preventDefault(); 
-
-    var form = this;
-    var submitBtn = document.querySelector(".submit-btn");
-
-    // Animasi tombol Kirim
-    submitBtn.innerHTML = `<i class="fas fa-spinner loading-spinner"></i> Mengirim...`;
-    submitBtn.disabled = true;
-
-    try {
-        var formData = new FormData(form);
-        var response = await fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: { "Accept": "application/json" }
-        });
-
-        if (response.ok) {
-            Swal.fire({
-                icon: 'success',
-                title: 'Pesan Terkirim!',
-                text: 'Terima kasih, saya akan segera membalas pesan Anda.',
-                confirmButtonColor: '#3085d6',
-                showClass: {
-                    popup: 'animate__animated animate__fadeInDown'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__fadeOutUp'
-                }
-            });
-            form.reset();
-        } else {
-            throw new Error('Gagal mengirim pesan');
-        }
-    } catch (error) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Terjadi kesalahan saat mengirim pesan. Coba lagi nanti!',
-            confirmButtonColor: '#d33',
-            showClass: {
-                popup: 'animate__animated animate__headShake'
-            }
-        });
-    } finally {
-        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Pesan';
-        submitBtn.disabled = false;
-    }
-});</script>
-
-<style>
-    .donations {
-        padding: 4rem 5%;
+    /* Footer */
+    footer {
+        background: rgba(2, 5, 7, 0.95);
+        padding: 1rem 5% 1rem;
         text-align: center;
+        border-top: 1px solid rgba(0, 240, 255, 0.2);
+        position: relative;
     }
 
-    .crypto-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-logo {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2.2rem;
+        color: var(--primary);
+        text-shadow: var(--neon-glow);
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+    .footer-text {
+        color: rgba(224, 248, 255, 0.8);
+        margin-bottom: 0.5rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.05rem;
+        line-height: 1.8;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
         gap: 2rem;
-        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
     }
 
-    .crypto-card {
-    background: rgba(10, 10, 20, 0.9); /* Warna dasar gelap transparan */
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid rgba(0, 255, 255, 0.8);
-    position: relative;
-}
+    .footer-links a {
+        color: var(--light);
+        font-weight: 500;
+        transition: var(--transition);
+    }
 
-.crypto-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
-    border-color: rgba(255, 0, 255, 0.9);
-}
+    .footer-links a:hover {
+        color: var(--primary);
+        text-shadow: var(--neon-glow);
+    }
 
-.crypto-card::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, rgba(0, 255, 255, 0.6), rgba(255, 0, 255, 0.6));
-    z-index: -1;
-    filter: blur(8px);
-    opacity: 0.7;
-    border-radius: 14px;
-}
+    .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
 
-@keyframes glitch {
-    0% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
-    25% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-2px); }
-    50% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(2px); }
-    75% { text-shadow: -4px 0 cyan, 4px 0 magenta; transform: translateX(-1px); }
-    100% { text-shadow: 4px 0 cyan, -4px 0 magenta; transform: translateX(0); }
-}
+    .footer-social a {
+        color: var(--light);
+        font-size: 1.5rem;
+        transition: var(--transition);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(0, 240, 255, 0.1);
+    }
 
- @keyframes glitch {
-    0% { text-shadow: 3px 0 cyan, -3px 0 magenta, 0 3px lime; transform: translateX(0); }
-    20% { text-shadow: -3px 0 cyan, 3px 0 magenta, 0 -3px lime; transform: translateX(-0.8px); }
-    40% { text-shadow: 3px 3px cyan, -3px -3px magenta, -3px 3px lime; transform: translateX(0.8px); }
-    60% { text-shadow: -3px -3px cyan, 3px 3px magenta, 3px -3px lime; transform: translateX(-0.5px); }
-    80% { text-shadow: 3px -3px cyan, -3px 3px magenta, -3px -3px lime; transform: translateX(0.5px); }
-    100% { text-shadow: -3px 3px cyan, 3px -3px magenta, 3px 3px lime; transform: translateX(0); }
-}
+    .footer-social a:hover {
+        color: var(--primary);
+        transform: translateY(-3px);
+        box-shadow: var(--neon-glow);
+        background: rgba(0, 240, 255, 0.2);
+    }
 
-@keyframes color-random {
-    0% { color: cyan; }
-    50% { color: magenta; }
-    100% { color: lime; }
-}
+    .copyright {
+        color: rgba(224, 248, 255, 0.5);
+        font-size: 0.9rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(0, 240, 255, 0.2);
+    }
 
-    .crypto-header {
+    /* Back to Top Button */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: rgba(0, 240, 255, 0.2);
+        border: 1px solid var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: var(--transition);
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+    }
+
+    .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        background: rgba(0, 240, 255, 0.3);
+        transform: translateY(-5px);
+        box-shadow: var(--neon-glow);
+    }
+
+    /* Loading Screen */
+    #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--darker);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 1s ease-out;
+    }
+
+    .cyberpunk-loader {
+        width: 60px;
+        height: 60px;
+        border: 6px solid var(--primary);
+        border-top: 6px solid var(--secondary);
+        border-radius: 50%;
+        animation: spin 1.5s linear infinite, glow 1.5s infinite alternate;
+        margin-bottom: 2rem;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    @keyframes glow {
+        0% { box-shadow: 0 0 15px rgba(0, 240, 255, 0.8), 0 0 30px rgba(255, 0, 245, 0.8); }
+        100% { box-shadow: 0 0 30px rgba(0, 240, 255, 1), 0 0 60px rgba(255, 0, 245, 1); }
+    }
+
+    .loading-text {
+        font-family: 'Orbitron', sans-serif;
+        color: var(--primary);
+        text-shadow: var(--neon-glow);
+        letter-spacing: 3px;
+        animation: glitchText 1.5s infinite alternate;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+
+    @keyframes glitchText {
+        0% { text-shadow: 0 0 15px var(--primary), 0 0 30px var(--secondary); }
+        50% { text-shadow: 0 0 20px var(--secondary), 0 0 40px var(--primary); }
+        100% { text-shadow: 0 0 15px var(--secondary), 0 0 30px var(--primary); }
+    }
+
+    /* Music Player */
+    .music-player {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
         display: flex;
         align-items: center;
         gap: 1rem;
-        margin-bottom: 1rem;
-    }
-   
-   
-    
-   .crypto-header i {
-     font-size: 2rem;
-     color: #F7931A;
-   }
-   
-   .crypto-header p {
-     font-size: 2rem;
-     color: #627EEA;
-   }
-   
-   .crypto-header img {
-     width: 33px;
-     height: auto;
-     vertical-align: middle;
-   }
-
-    .qr-code {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto 1rem;
-        border-radius: 8px;
     }
 
-    .wallet-address {
-        background: #f0f0f0;
-        padding: 0.5rem;
-        border-radius: 5px;
-        cursor: pointer;
+    .music-toggle {
+        width: 50px;
+        height: 50px;
+        background: rgba(2, 5, 7, 0.8);
+        border: 1px solid var(--primary);
+        border-radius: 50%;
+        color: var(--primary);
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        transition: background 0.3s;
-    }
-    
-    .wallet-address span {
-      color: #000;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-    .wallet-address:hover {
-        background: #e0e0e0;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
     }
 
-    .fa-copy {
-        color: var(--secondary);
+    .music-toggle:hover {
+        transform: scale(1.1);
+        box-shadow: var(--neon-glow);
     }
 
-    
-</style>
-
-<!-- Tambahkan JavaScript -->
-<script>
-    // Fungsi copy alamat wallet
-    function copyAddress(element) {
-    const address = element.querySelector('span').textContent;
-
-    // Cek dukungan Clipboard API
-    if (!navigator.clipboard) {
-        alert("Browser tidak mendukung Clipboard API.");
-        return;
+    .music-toggle i {
+        font-size: 1.3rem;
     }
 
-    // Salin alamat ke clipboard
-    navigator.clipboard.writeText(address).then(() => {
-        const icon = element.querySelector('i');
-        icon.classList.remove('fa-copy');
-        icon.classList.add('fa-check');
+    .music-info {
+        background: rgba(2, 5, 7, 0.8);
+        border: 1px solid rgba(0, 240, 255, 0.3);
+        border-radius: 30px;
+        padding: 0.5rem 1.5rem;
+        color: var(--light);
+        font-size: 0.9rem;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: var(--transition);
+        white-space: nowrap;
+        max-width: 0;
+        overflow: hidden;
+    }
 
-        // Kembalikan ikon setelah 2 detik
-        setTimeout(() => {
-            icon.classList.remove('fa-check');
-            icon.classList.add('fa-copy');
-        }, 2000);
-    }).catch((err) => {
-        console.error("Gagal menyalin alamat: ", err);
-        alert("Gagal menyalin alamat. Silakan coba lagi.");
-    });
-}
+    .music-player:hover .music-info {
+        opacity: 1;
+        transform: translateX(0);
+        max-width: 300px;
+    }
 
-    // Animasi untuk hobi cards
-document.querySelectorAll('.hobby-card').forEach((card) => {
-    observer.observe(card);
-});
+    /* Audio Element */
+    audio {
+        display: none;
+    }
 
-!-- Tambahkan FontAwesome untuk ikon -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
-
-<script>
-    const music = document.getElementById("bg-music");
-    const musicBtn = document.getElementById("music-toggle");
-    const icon = musicBtn.querySelector("i");
-
-    musicBtn.addEventListener("click", () => {
-        if (music.paused) {
-            music.play();
-            icon.classList.replace("fa-play", "fa-pause");
-        } else {
-            music.pause();
-            icon.classList.replace("fa-pause", "fa-play");
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+        .experience-date {
+            flex: 0 0 120px;
         }
-    });
-</script>
-
-<style>
-.cv-linkk {
-    padding-top: 8px;
-    display: block;
-}
-
-  .cv-linkk {
-    color: var(--secondary); /* Warna utama */
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s;
-
-}</style>
-
-
-<style>
-/* Tambahkan CSS khusus Solana */
-.solana-verify {
-    display: block;
-    margin-top: 0.5rem;
-    color: var(--secondary);
-}
-
-.solana-verify a {
-    color: #9945FF; /* Warna brand Solana */
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.solana-verify a:hover {
-    color: #0033a0; /* Warna sekunder Solana */
-    text-decoration: underline;
-}
-</style>
-
-<script>
-// Update fungsi copy untuk Solana
-function copyAddress(element) {
-    const solanaAddress = element.querySelector('span').textContent;
-    
-    // Fallback untuk browser lama
-    if(!navigator.clipboard) {
-        const textArea = document.createElement('textarea');
-        textArea.value = solanaAddress;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-    } else {
-        navigator.clipboard.writeText(solanaAddress);
     }
-    
-    // Feedback visual
-    const icon = element.querySelector('i');
-    icon.classList.replace('fa-copy', 'fa-check');
-    
-    setTimeout(() => {
-        icon.classList.replace('fa-check', 'fa-copy');
-    }, 2000);
-}
-</script>
 
-<style>
-ethereum-verify {
-    display: block;
-    margin-top: 0.5rem;
-    color: var(--secondary);
+    @media (max-width: 992px) {
+        .timeline::after {
+            left: 31px;
+        }
+
+        .timeline-item {
+            width: 100%;
+            padding-left: 80px;
+            padding-right: 25px;
+        }
+
+        .timeline-item::after {
+            left: 21px;
+        }
+
+        .left::after, .right::after {
+            left: 21px;
+        }
+
+        .right {
+            left: 0;
+        }
+
+        .experience-item {
+            flex-direction: column;
+        }
+
+        .experience-date {
+            text-align: left;
+            padding-bottom: 0.5rem;
+        }
+
+        .experience-content::before {
+            top: -8px;
+            left: 30px;
+            transform: rotate(135deg);
+        }
+    }
+
+    @media (max-width: 768px) {
+        :root {
+            --section-padding: 5rem 5%;
+        }
+
+        nav {
+            padding: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            height: 100vh;
+            background: rgba(2, 5, 7, 0.98);
+            backdrop-filter: blur(10px);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: right 0.5s ease;
+            border-left: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .nav-links.active {
+            right: 0;
+        }
+
+        .menu-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero {
+            padding-top: 6rem;
+            padding-bottom: 3rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            justify-content: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+        }
+
+        .contact-container {
+            grid-template-columns: 1fr;
+        }
+
+        .music-player {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .music-toggle {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        :root {
+            --section-padding: 4rem 5%;
+        }
+
+        .hero {
+            padding-top: 5rem;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .card {
+            padding: 1.5rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+        }
+
+        .timeline-date, .timeline-location {
+            font-size: 0.9rem;
+        }
+
+        .wallet-address {
+            font-size: 0.8rem;
+            padding: 0.8rem;
+        }
+
+        .qr-code {
+            width: 150px;
+            height: 150px;
+        }
+
+        .footer-links {
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+
+    /* Animation Classes */
+    .fade-in {
+        animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+  .slide-up {
+    will-change: transform, opacity;
+    animation: slideUp 1s ease-out forwards;
+    backface-visibility: hidden;
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
 }
 
-.ethereum-verify a {
-    color: #627EEA; /* Warna brand Solana */
-    text-decoration: none;
-    font-weight: 500;
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+    to { 
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
 
-.ethereum-verify a:hover {
-    color: #0033a0; /* Warna sekunder Solana */
-    text-decoration: underline;
-}
+   
+    .slide-left {
+        animation: slideLeft 1s ease forwards;
+    }
+
+    @keyframes slideLeft {
+        from { 
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to { 
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .slide-right {
+        animation: slideRight 1s ease forwards;
+    }
+
+    @keyframes slideRight {
+        from { 
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        to { 
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .zoom-in {
+        animation: zoomIn 1s ease forwards;
+    }
+
+    @keyframes zoomIn {
+        from { 
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to { 
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
 </style>
 
-<style>
-btc-verify {
-    display: block;
-    margin-top: 0.5rem;
-    color: var(--secondary);
-}
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="cyberpunk-loader"></div>
+        <div class="loading-text">SYSTEM INITIALIZING</div>
+    </div>
+    
+     <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#home" class="logo">PORTFOLIO</a>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
 
-.btc-verify a {
-    color: #F7931A; /* Warna brand Solana */
-    text-decoration: none;
-    font-weight: 500;
-}
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="profile-img-container">
+            <img src="Picsart_25-02-08_13-10-07-459.jpg" alt="Muhammad Eko Wahyudi" class="profile-img">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">EKO WAHYUDI</h1>
+            <h2 class="hero-subtitle">Student & Digital Investor</h2>
+            <p class="hero-description">
+                A digital investor with a strong passion for blockchain and decentralized finance. Specializing in cryptocurrency analysis, portfolio management, and financial growth strategies to maximize returns in the digital economy.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Contact Me
+                </a>
+                <a href="#projects" class="btn btn-secondary">
+                    <i class="fas fa-code"></i> View Projects
+                </a>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com/thisis_exoo?igsh=NGR4MHh3dG5pbjYw" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/exo_wahyud1?t=Vmo2ZTMl8rtnK15nBHOSaw&s=09" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/W4HYUD111" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/muhammad-eko-wahyudi?trk=contact-info" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
 
-.btc-verify a:hover {
-    color: #0033a0; /* Warna sekunder Solana */
-    text-decoration: underline;
-}
-</style>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ABOUT ME</h2>
+                <p class="section-subtitle">Get to know more about my professional journey and expertise</p>
+            </div>
+            <div class="about-content">
+    <div class="about-text">
+        <h3 class="about-title">Who Am I?</h3>
+        <p class="about-description">
+            I'm a blockchain enthusiast and digital investor with a strong passion for decentralized technologies. My journey in the crypto space began in 2023, and since then, I've been actively involved in analyzing market trends, evaluating projects, and building my expertise in this rapidly evolving field.
+        </p>
+        <p class="about-description">
+            My approach combines technical analysis with fundamental research to identify promising investment opportunities in the blockchain ecosystem. I'm particularly interested in DeFi protocols, NFT innovations, and the intersection of traditional finance with decentralized technologies.
+        </p>
+        <p class="about-description">
+            Recently, I've also developed an interest in Indonesian stocks, exploring the local market and seeking investment opportunities within this growing sector. I believe in diversifying my portfolio and understanding both the global and local financial landscapes.
+        </p>
+        <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="skill-name">Market Analysis</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-coins"></i></div>
+                            <div class="skill-name">Crypto & Stock Investments</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
+                            <div class="skill-name">Financial Modeling</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                            <div class="skill-name">Blockchain Research</div>
+                        </div>
+                    </div>
+                </div>
+               <div class="stats-grid">
+    <div class="stat-item">
+        <div class="stat-number">2+</div>
+        <div class="stat-label">Years in Crypto</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">2+</div>
+        <div class="stat-label">Years in Indonesian Stock</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">70%</div>
+        <div class="stat-label">Passion for Web3</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">DeFi Protocols Explored</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Indonesian Stocks Tracked</div>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
 
-<script>window.addEventListener("load", function () {
-    const loadingScreen = document.getElementById("loading-screen");
-    setTimeout(() => {
-        loadingScreen.style.opacity = "0";
-        setTimeout(() => {
-            loadingScreen.style.display = "none";
-        }, 1000); // Waktu transisi fade out
-    }, 2000); // Waktu tampilan loading screen (2 detik)
-});</script>
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">EDUCATION</h2>
+                <p class="section-subtitle">My academic background and continuous learning journey</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2022 - Present</div>
+                        <h3 class="timeline-title">MA NU AL-FAQIHIYAH</h3>
+                        <div class="timeline-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Randu Pitu - Gempol - Pasuruan</span>
+                        </div>
+                        <p class="timeline-description">
+                             Currently pursuing senior high school education with focus on social sciences and technology.
+                        </p>
+                        <a href="https://maps.app.goo.gl/mc3J2JpAhrohWmp17" target="_blank" class="card-link">
+                            View Location
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2019 - 2022</div>
+                        <h3 class="timeline-title">MTs. NU AL-FAQIHIYAH</h3>
+                        <div class="timeline-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Randu Pitu - Gempol - Pasuruan</span>
+                        </div>
+                        <p class="timeline-description">
+                            Junior high school education with emphasis on science and technology fundamentals.
+                        </p>
+                        <a href="https://maps.app.goo.gl/mc3J2JpAhrohWmp17" target="_blank" class="card-link">
+                            View Location
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2013 - 2019</div>
+                        <h3 class="timeline-title">MI NU AL-FAQIH</h3>
+                        <div class="timeline-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Gnerong - Gempol - Pasuruan</span>
+                        </div>
+                        <p class="timeline-description">
+                            Completed elementary education with focus on foundational knowledge and character building.
+                        </p>
+                        <a href="https://maps.app.goo.gl/YR3Gxxvc7t3Gefu57?g_st=a" target="_blank" class="card-link">
+                            View Location
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2010 - 2020</div>
+                        <h3 class="timeline-title">Pondok Pesantren SALAFIYAH AL-FAQIH</h3>
+                        <div class="timeline-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ngerong - Gempol - Pasuruan</span>
+                        </div>
+                        <p class="timeline-description">
+                            Traditional Islamic boarding school education focusing on religious studies, character development, 
+                            and community values.
+                        </p>
+                        <a href="https://maps.app.goo.gl/NpZX1KBaempZvjT2A" target="_blank" class="card-link">
+                            View Location
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">PROJECTS</h2>
+                <p class="section-subtitle">My blockchain and investment-related projects and research</p>
+            </div>
+                <div class="card project-card">
+                    <img src="Picsart_25-04-03_12-21-37-950.jpg" alt="Crypto Analysis Dashboard" class="project-image">
+                    <div class="project-overlay">
+                        <div class="project-tags">
+                            <span class="project-tag">Web Development</span>
+                            <span class="project-tag">Frontend</span>
+                            <span class="project-tag">Responsive Design</span>
+                        </div>
+                        <h3 class="project-title">Personal Portofolio Website</h3>
+                        <p class="project-description">
+                          A clean, responsive, and visually appealing personal portfolio website showcasing 
+            my skills, projects, and experience. Built with HTML, CSS, and JavaScript.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://portofolioekowahyudi.vercel.app" class="project-link project-link-primary">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                            <a href="https://github.com/W4HYUD111/Portofoliopribadi.git" class="project-link project-link-secondary">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="card project-card">
+                <div class="project-overlay">
+                   <div class="project-tags">
+                   <span class="project-tag">Upcoming</span>
+                   <span class="project-tag">New Project</span>
+                 </div>
+                     <h3 class="project-title">Coming Soon!!!</h3>
+                     <p class="project-description">
+            Exciting new project is on the way. Stay tuned for updates!
+               </p>
+                    <div class="project-links">
+                    <a href="#" class="project-link project-link-primary disabled">
+                   <i class="fas fa-hourglass-half"></i> In Progress
+                     </a>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">SKILLS & EXPERTISE</h2>
+                <p class="section-subtitle">My professional skills and areas of specialization</p>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="card-title">Economic Analysis</h3>
+                    <p class="card-description">
+                        Advanced market trend analysis, statistical modeling, and data visualization techniques 
+                        for informed investment decisions in traditional and crypto markets.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="card-title">Financial Analysis</h3>
+                    <p class="card-description">
+                        Comprehensive fundamental and technical analysis of assets, risk assessment methodologies, 
+                        and portfolio management strategies for optimal returns.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3 class="card-title">Microsoft Excel</h3>
+                    <p class="card-description">
+                        Expert-level data analysis, complex formulas, pivot tables, and interactive dashboard 
+                        creation for financial modeling and data interpretation.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-file-word"></i>
+                    </div>
+                    <h3 class="card-title">Microsoft Word</h3>
+                    <p class="card-description">
+                        Professional document formatting, advanced report writing, and automated mail merge 
+                        for creating polished business and academic documents.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="card-title">Google Docs</h3>
+                    <p class="card-description">
+                        Efficient collaborative document editing, cloud-based file management, and advanced 
+                        formatting for team projects and remote work environments.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <h3 class="card-title">Google Sheets</h3>
+                    <p class="card-description">
+                        Real-time data collaboration, complex financial formulas, and interactive data 
+                        visualization for comprehensive financial tracking and analysis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Experience Section --><section id="experience" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+            <p class="section-subtitle">My journey in crypto and stock investments</p>
+        </div>
+        <div class="experience-item">
+            <div class="experience-date">2023 - Present</div>
+            <div class="experience-content">
+                <h3 class="experience-title">Crypto & Stock Market Analyst</h3>
+                <div class="experience-company">
+                    <i class="fas fa-building"></i>
+                    <span>Independent Researcher</span>
+                </div>
+                <p class="experience-description">
+                    Conducting in-depth analysis of cryptocurrency and stock markets, evaluating blockchain projects, 
+                    and performing technical and fundamental analysis to develop strategic investment decisions.
+                </p>
+                <div class="experience-skills">
+                    <span class="experience-skill">Technical & Fundamental Analysis</span>
+                    <span class="experience-skill">Market Trend Forecasting</span>
+                    <span class="experience-skill">Portfolio Diversification</span>
+                </div>
+            </div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-date">2023 - Present</div>
+            <div class="experience-content">
+                <h3 class="experience-title">Digital Asset & Equity Investor</h3>
+                <div class="experience-company">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Personal Portfolio</span>
+                </div>
+                <p class="experience-description">
+                    Managing a diversified portfolio across cryptocurrency and stock markets, implementing risk management strategies, 
+                    and leveraging arbitrage and momentum opportunities in both traditional and decentralized financial markets.
+                </p>
+                <div class="experience-skills">
+                    <span class="experience-skill">Portfolio & Risk Management</span>
+                    <span class="experience-skill">Stock & Crypto Valuation</span>
+                    <span class="experience-skill">Market Sentiment Analysis</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">GET IN TOUCH</h2>
+                <p class="section-subtitle">Feel free to reach out for collaborations or inquiries</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/mdkallnj" method="POST">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                          
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" name="message" class="form-input" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-header">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3 class="info-title">Email</h3>
+                        </div>
+                        <p class="info-content">For business inquiries and collaborations</p>
+                        <a href="mailto:meko7615@gmail.com" class="info-link">
+                            meko7615@gmail.com
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-header">
+                            <div class="info-icon"><i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h3 class="info-title">WhatsApp</h3>
+                        </div>
+                        <p class="info-content">For quick questions and direct communication</p>
+                        <a href="https://wa.me/6289525027398" target="_blank" class="info-link">
+                            +62 895-2502-7398
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-header">
+                            <div class="info-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h3 class="info-title">Curriculum Vitae</h3>
+                        </div>
+                        <p class="info-content">View my professional resume and background</p>
+                        <a href="https://drive.google.com/file/d/1WFKmI6YA0_Vc3vrM35vioL7fHThHeSsF/view?usp=drivesdk" 
+                           target="_blank" 
+                           class="info-link">
+                            Download CV
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crypto Donations Section -->
+    <section id="donate" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">CRYPTO DONATIONS</h2>
+                <p class="section-subtitle">Support my work with cryptocurrency donations</p>
+            </div>
+            <div class="crypto-grid">
+                <div class="crypto-card">
+                    <div class="crypto-header">
+                        <i class="fab fa-bitcoin crypto-icon btc-icon"></i>
+                        <h3 class="crypto-title">Bitcoin</h3>
+                    </div>
+                    <img src="1739074853064.jpg" alt="BTC QR Code" class="qr-code">
+                    <div class="wallet-address" onclick="copyAddress(this)">
+                        <span>1CU4MBc8aV67Xc4wqfG786pVdMWtcN2uwf</span>
+                        <i class="fas fa-copy copy-icon"></i>
+                    </div>
+                    <a href="https://mempool.space/address/1CU4MBc8aV67Xc4wqfG786pVdMWtcN2uwf" 
+                       target="_blank" 
+                       class="verify-link">
+                        Verify on Mempool.space
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <div class="crypto-card">
+                    <div class="crypto-header">
+                        <i class="fab fa-ethereum crypto-icon eth-icon"></i>
+                        <h3 class="crypto-title">Ethereum</h3>
+                    </div>
+                    <img src="1739074624741.jpg" alt="ETH QR Code" class="qr-code">
+                    <div class="wallet-address" onclick="copyAddress(this)">
+                        <span>0xf72B1355d7C8570Ef67d8AdF914eDa77f17B67F8</span>
+                        <i class="fas fa-copy copy-icon"></i>
+                    </div>
+                    <a href="https://etherscan.io/address/0xf72B1355d7C8570Ef67d8AdF914eDa77f17B67F8" 
+                       target="_blank" 
+                       class="verify-link">
+                        Verify on Etherscan
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">EKO_W</div>
+            <p class="footer-text">
+                Crypto & stock investor with a passion for decentralized technologies, market analysis, and financial innovation in the Web3 era.
+            </p>
+            
+            <div class="footer-social">
+                <a href="https://www.instagram.com/thisis_exoo?igsh=NGR4MHh3dG5pbjYw" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/exo_wahyud1?t=Vmo2ZTMl8rtnK15nBHOSaw&s=09" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/W4HYUD111" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/muhammad-eko-wahyudi?trk=contact-info" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/6289525027398" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="copyright">
+                &copy; 2025 MUHAMMAD EKO WAHYUDI. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loading-screen').style.display = 'none';
+                }, 1000);
+            }, 2000);
+        });
+
+        // Mobile Navigation
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+            menuToggle.querySelector('i').classList.toggle('fa-bars');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Active link highlighting
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your message has been sent successfully.',
+                        icon: 'success',
+                        confirmButtonColor: '#00f0ff',
+                        background: '#020507',
+                        color: '#e0f8ff'
+                    });
+                    form.reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'There was a problem sending your message. Please try again later.',
+                    icon: 'error',
+                    confirmButtonColor: '#ff00f5',
+                    background: '#020507',
+                    color: '#e0f8ff'
+                });
+            } finally {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Copy wallet address functionality
+        function copyAddress(element) {
+            const address = element.querySelector('span').textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                const icon = element.querySelector('i');
+                icon.classList.remove('fa-copy');
+                icon.classList.add('fa-check');
+                
+                setTimeout(() => {
+                    icon.classList.remove('fa-check');
+                    icon.classList.add('fa-copy');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy address: ', err);
+            });
+        }
+
+
+        // Music player functionality
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        
+        // Try to autoplay music (may be blocked by browser)
+        bgMusic.volume = 0.3;
+        const playPromise = bgMusic.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                // Autoplay was prevented, show UI to let user start music
+                musicToggle.style.display = 'flex';
+                musicToggle.addEventListener('click', function() {
+                    bgMusic.play();
+                    musicToggle.querySelector('i').classList.add('fa-volume-up');
+                    musicToggle.querySelector('i').classList.remove('fa-music');
+                });
+            }).then(() => {
+                // Autoplay worked
+                musicToggle.style.display = 'flex';
+                musicToggle.querySelector('i').classList.add('fa-volume-up');
+                musicToggle.querySelector('i').classList.remove('fa-music');
+            });
+        }
+        
+        // Toggle music play/pause
+        musicToggle.addEventListener('click', function() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                musicToggle.querySelector('i').classList.add('fa-volume-up');
+                musicToggle.querySelector('i').classList.remove('fa-music');
+            } else {
+                bgMusic.pause();
+                musicToggle.querySelector('i').classList.add('fa-music');
+                musicToggle.querySelector('i').classList.remove('fa-volume-up');
+            }
+        });
+
+        // Animate elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.card, .timeline-content, .contact-form, .info-card, .crypto-card, .testimonial-card, .blog-card, .experience-content, .stat-item, .skill-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('slide-up');
+                }
+            });
+        };
+
+        // Run once on load and then on scroll
+        animateOnScroll();
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
