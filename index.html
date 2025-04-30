@@ -24,6 +24,56 @@
             --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
         }
 
+        /* Keyframes Animasi */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes neonPulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; text-shadow: 0 0 20px var(--primary); }
+            100% { opacity: 0.8; }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 240, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0); }
+        }
+
+        @keyframes shine {
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes gridScroll {
+            from { background-position: 0 0; }
+            to { background-position: 50px 50px; }
+        }
+
+        /* Animasi Scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.4s; }
+        .delay-3 { transition-delay: 0.6s; }
+
+        /* CSS Utama */
         * {
             margin: 0;
             padding: 0;
@@ -44,7 +94,6 @@
             font-weight: 400;
         }
 
-        /* Cyberpunk Grid Background */
         body::before {
             content: "";
             position: fixed;
@@ -57,6 +106,7 @@
                 linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
             z-index: -2;
+            animation: gridScroll 20s linear infinite;
         }
 
         /* Animated Scanline Effect */
@@ -250,6 +300,7 @@
 
     .profile-img-container {
         flex: 1;
+        animation: float 4s ease-in-out infinite;
         max-width: 350px;
         position: relative;
         margin: 0 auto;
@@ -336,15 +387,14 @@
     }
 
     .hero-title {
-        font-size: clamp(2.5rem, 6vw, 4rem);
-        margin-bottom: 0.5rem;
-        line-height: 1.1;
-        background: linear-gradient(90deg, var(--primary), var(--accent));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        text-shadow: none;
-    }
+        font-size: 3rem; /* atau sesuai kebutuhan */
+    animation: neonPulse 2s infinite, slideRight 1s ease-out, gradient 5s ease infinite;
+    background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 
     .hero-subtitle {
         font-size: clamp(1.3rem, 3vw, 1.8rem);
@@ -399,8 +449,11 @@
     .btn-primary {
         background: linear-gradient(90deg, var(--primary), var(--accent));
         color: var(--darker);
+        position: relative;
+            overflow: hidden;
     }
-
+    
+     
     .btn-primary:hover {
         transform: translateY(-3px);
         box-shadow: var(--neon-glow);
@@ -431,7 +484,7 @@
     .social-media a {
         color: var(--light);
         font-size: 1.5rem;
-        transition: var(--transition);
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         position: relative;
         width: 45px;
         height: 45px;
@@ -444,7 +497,8 @@
 
     .social-media a:hover {
         color: var(--primary);
-        transform: translateY(-3px);
+        transform: rotate(360deg) scale(1.2);
+        
         box-shadow: var(--neon-glow);
         background: rgba(0, 240, 255, 0.2);
     }
@@ -560,7 +614,8 @@
             border: 1px solid rgba(0, 240, 255, 0.2);
             border-radius: var(--card-border-radius);
             padding: 2rem;
-            transition: var(--transition);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            transform: perspective(1000px) rotateX(0) rotateY(0);
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(5px);
@@ -579,10 +634,9 @@
             transition: var(--transition);
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--neon-glow);
-            border-color: var(--primary);
+          .card:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 20px 40px rgba(0, 240, 255, 0.2);
         }
 
         .card:hover::before {
@@ -668,6 +722,7 @@
             top: 20px;
             z-index: 1;
             box-shadow: var(--neon-glow);
+            animation: pulse 2s infinite;
         }
 
         .left {
@@ -1691,8 +1746,10 @@
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 20rem;
         }
+        
+        
 
         .section-subtitle {
             font-size: 1.1rem;
@@ -1860,6 +1917,142 @@
             transform: scale(1);
         }
     }
+    
+       #certificates {
+            padding: var(--section-padding);
+        }
+
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .certificate-card {
+            background: rgba(2, 5, 7, 0.7);
+            border: 2px solid var(--primary);
+            border-radius: var(--card-border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            animation: certificateFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes certificateFloat {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--primary);
+            transition: transform 0.5s ease;
+        }
+
+        .certificate-info {
+            padding: 1.5rem;
+        }
+
+        .certificate-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .certificate-tags {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Modal Styles */
+        .certificate-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.3);
+            animation: modalZoom 0.3s ease-out;
+        }
+
+        @keyframes modalZoom {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: var(--primary);
+            font-size: 40px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg) scale(1.2);
+        }
+        
+        .certificate-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.certificate-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid var(--primary);
+    border-radius: 30px;
+    color: var(--primary);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    transition: var(--transition);
+    background: rgba(0, 240, 255, 0.05);
+}
+
+.certificate-link i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.certificate-link:hover {
+    background: rgba(0, 240, 255, 0.15);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.certificate-link:hover i {
+    transform: rotate(45deg);
+}
 </style>
 
 </head>
@@ -1877,6 +2070,7 @@
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#education">Education</a>
+            <a href="#certificates">Certificate</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
@@ -1935,19 +2129,19 @@
             Recently, I've also developed an interest in Indonesian stocks, exploring the local market and seeking investment opportunities within this growing sector. I believe in diversifying my portfolio and understanding both the global and local financial landscapes.
         </p>
         <div class="skills-grid">
-                        <div class="skill-item">
+                        <div class="stat-item">
                             <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
                             <div class="skill-name">Market Analysis</div>
                         </div>
-                        <div class="skill-item">
+                        <div class="stat-item">
                             <div class="skill-icon"><i class="fas fa-coins"></i></div>
                             <div class="skill-name">Crypto & Stock Investments</div>
                         </div>
-                        <div class="skill-item">
+                        <div class="stat-item">
                             <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
                             <div class="skill-name">Financial Modeling</div>
                         </div>
-                        <div class="skill-item">
+                        <div class="stat-item">
                             <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
                             <div class="skill-name">Blockchain Research</div>
                         </div>
@@ -2059,6 +2253,48 @@
             </div>
         </div>
     </section>
+    
+    <section id="certificates" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certificate</h2>
+                <p class="section-subtitle">Collection of Certificates and Awards</p>
+            </div>
+            
+            <div class="certificate-grid">
+                <!-- Sertifikat 1 -->
+               <div class="certificate-card">
+    <img src="Certificate-of-Completion-Introduction-to-Information-Security.jpg" alt="Sertifikat Blockchain" class="certificate-image" onclick="openModal('Certificate-of-Completion-Introduction-to-Information-Security.jpg')">
+    <div class="certificate-info">
+        <h3>Introduction to Information Security Course</h3>
+        <p>Cyber Academy • 19 April 2025</p>
+        <div class="certificate-links">
+            <a href="https://www.cyberacademy.id/certificate/PKMI01104250984" 
+               target="_blank" 
+               class="certificate-link"
+               onmouseover="tiltCertificate(this)" 
+               onmouseout="resetCertificate(this)">
+                <i class="fas fa-external-link-alt"></i>
+                Verifikasi Sertifikat
+            </a>
+            <a href="javascript:void(0)" 
+               class="certificate-link"
+               onclick="openModal('Certificate-of-Completion-Introduction-to-Information-Security.jpg')"
+               onmouseover="tiltCertificate(this)" 
+               onmouseout="resetCertificate(this)">
+                <i class="fas fa-expand"></i>
+                Perbesar
+            </a>
+        </div>
+    </div>
+</div>
+</section>
+
+    <!-- Modal -->
+    <div id="certificateModal" class="certificate-modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
 
     <!-- Projects Section -->
     <section id="projects" class="section">
@@ -2111,6 +2347,8 @@
             </div>
         </div>
     </section>
+    
+    
 
     <!-- Skills Section -->
     <section id="skills" class="section">
@@ -2596,6 +2834,44 @@
         // Run once on load and then on scroll
         animateOnScroll();
         window.addEventListener('scroll', animateOnScroll);
+        
+        
+        // Animasi tilt pada link
+function tiltCertificate(element) {
+    element.style.transform = 'rotate(2deg) scale(1.05)';
+}
+
+function resetCertificate(element) {
+    element.style.transform = 'rotate(0deg) scale(1)';
+}
+
+// Fungsi modal
+function openModal(imgSrc) {
+    const modal = document.getElementById('certificateModal');
+    const modalImg = document.getElementById('modalImage');
+    
+    modal.style.display = "flex";
+    modalImg.src = imgSrc;
+    
+    // Animasi masuk
+    modal.style.opacity = "0";
+    modalImg.style.transform = "scale(0.8)";
+    
+    setTimeout(() => {
+        modal.style.opacity = "1";
+        modalImg.style.transform = "scale(1)";
+    }, 10);
+}
+
+function closeModal() {
+    const modal = document.getElementById('certificateModal');
+    
+    // Animasi keluar
+    modal.style.opacity = "0";
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 300);
+}
     </script>
 </body>
 </html>
